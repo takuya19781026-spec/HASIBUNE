@@ -165,51 +165,36 @@
       letter-spacing: 0.07em;
     }
 
-    /* ====== ABOUT — magazine split ====== */
+    /* ====== PHILOSOPHY — full-bleed split ====== */
     .dh-about {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0;
-      background: var(--off);
+      height: 680px;
+      overflow: hidden;
     }
 
     .dh-about-text {
-      padding: 9rem 5rem 9rem 6vw;
+      padding: 7rem 5rem 7rem 6vw;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      background: #faf8f5;
     }
 
     .dh-about-vis {
-      background: var(--navy2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 540px;
       position: relative;
       overflow: hidden;
     }
 
-    .dh-about-vis-txt {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: clamp(3rem, 6vw, 6rem);
-      font-weight: 300;
-      color: rgba(255,255,255,0.1);
-      padding: 2rem;
-      text-align: center;
-      line-height: 1.3;
-    }
-
-    .dh-about-vis-tag {
+    .dh-about-vis img {
       position: absolute;
-      bottom: 2.5rem;
-      left: 2.5rem;
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      color: rgba(255,255,255,0.3);
-      text-transform: uppercase;
-      font-family: var(--sans);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
     }
 
     /* ====== SERVICES — vertical list ====== */
@@ -565,32 +550,24 @@
   </section>
 
 
-  <!-- ② ブランド制作について -->
+  <!-- ② デザイン哲学 -->
   <section class="dh-about">
     <div class="dh-about-text">
-      <span class="ds-label">— About Our Design —</span>
-      <h2 class="ds-h2">
-        デザインとは<br>
-        ブランドの<br>
-        声である。
+      <span class="ds-label">— Design Philosophy —</span>
+      <h2 class="ds-h2" style="margin-bottom:2rem;">
+        Form follows<br>
+        meaning.
       </h2>
       <div class="ds-rule"></div>
       <p class="ds-body">
         HASIBUNEのデザインは、表面的な美しさではなく、<br>
         ブランドの思想・哲学・物語を視覚言語に翻訳することを目的とします。<br><br>
         ロゴひとつ、名刺一枚、ラベルの一行に至るまで、<br>
-        すべての選択に意味と意図を宿らせます。<br><br>
-        それが、時を経ても色褪せないブランドをつくる唯一の方法だと、<br>
-        私たちは信じています。
+        すべての選択に意味と意図を宿らせます。
       </p>
     </div>
     <div class="dh-about-vis">
-      <p class="dh-about-vis-txt">
-        Form<br>
-        follows<br>
-        meaning.
-      </p>
-      <span class="dh-about-vis-tag">HASIBUNE Design Philosophy</span>
+      <img src="images/design-philosophy-bg.jpg" alt="HASIBUNE Design Philosophy">
     </div>
   </section>
 
