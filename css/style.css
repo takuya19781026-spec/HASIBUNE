@@ -50,8 +50,9 @@ ul {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(26, 26, 46, 0.95);
-  backdrop-filter: blur(4px);
+  background: rgba(245, 240, 232, 0.96);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(42,36,32,0.08);
   padding: 0 2rem;
   height: 70px;
   display: flex;
@@ -62,14 +63,14 @@ ul {
 .site-header .logo {
   font-family: var(--font-heading);
   font-size: 1.4rem;
-  color: var(--color-accent);
+  color: #2a2420;
   letter-spacing: 0.1em;
 }
 
 .site-header .logo span {
   display: block;
   font-size: 0.65rem;
-  color: #aaa;
+  color: #9a8878;
   letter-spacing: 0.2em;
   font-family: var(--font-main);
   font-weight: 300;
@@ -82,7 +83,8 @@ ul {
 }
 
 .nav-menu a {
-  color: #ddd;
+  color: #2a2420;
+  font-weight: 300;
   font-size: 0.85rem;
   letter-spacing: 0.08em;
   transition: color 0.2s;
@@ -90,7 +92,7 @@ ul {
 
 .nav-menu a:hover,
 .nav-menu a.active {
-  color: var(--color-accent);
+  color: #2a2420;
 }
 
 .nav-toggle {
@@ -211,7 +213,7 @@ ul {
 .section-label {
   font-size: 0.7rem;
   letter-spacing: 0.35em;
-  color: var(--color-accent);
+  color: #2a2420;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
 }
@@ -370,8 +372,8 @@ ul {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  background: var(--color-primary);
-  color: #aaa;
+  background: #2a2420;
+  color: #9a8878;
   padding: 4rem 2rem 2rem;
 }
 
@@ -386,7 +388,7 @@ ul {
 .footer-brand .logo {
   font-family: var(--font-heading);
   font-size: 1.4rem;
-  color: var(--color-accent);
+  color: #d4b872;
   letter-spacing: 0.1em;
   margin-bottom: 0.8rem;
 }
@@ -404,12 +406,12 @@ ul {
 
 .footer-nav a {
   font-size: 0.85rem;
-  color: #aaa;
+  color: #9a8878;
   transition: color 0.2s;
 }
 
 .footer-nav a:hover {
-  color: var(--color-accent);
+  color: #d4b872;
 }
 
 .footer-bottom {
@@ -430,7 +432,7 @@ ul {
     left: 0;
     width: 100%;
     flex-direction: column;
-    background: var(--color-primary);
+    background: #2a2420;
     padding: 2rem;
     gap: 1.5rem;
   }
