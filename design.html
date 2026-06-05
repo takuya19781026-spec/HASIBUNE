@@ -3,16 +3,557 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>デザイン・ウェブデザイン | 株式会社HASIBUNE</title>
-  <meta name="description" content="HASIBUNEのデザイン・ウェブデザインサービス。ロゴ・ブランディング・ウェブサイト制作。">
+  <title>Design / Branding | 株式会社HASIBUNE</title>
+  <meta name="description" content="HASIBUNEのデザイン・ブランディング。ロゴ・名刺・ラベル・ウェブ・ブランドコンセプト設計。ブランドは、見た目ではなく記憶に残る体験。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* =============================================
+       DESIGN PAGE — Luxury Magazine Style
+       White base · Black type · Navy accent
+    ============================================= */
+
+    :root {
+      --white:   #ffffff;
+      --off:     #f7f5f2;
+      --ink:     #111111;
+      --ink2:    #1a1a1a;
+      --muted:   #888888;
+      --light:   #e8e4dd;
+      --navy:    #0d1b2a;
+      --navy2:   #152238;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Noto Sans JP', sans-serif;
+      --nserif:  'Noto Serif JP', serif;
+    }
+
+    /* ---- base ---- */
+    body { background: var(--white); color: var(--ink); font-family: var(--sans); font-weight: 300; }
+
+    /* ---- header ---- */
+    .site-header { background: rgba(255,255,255,0.94); border-bottom: 1px solid rgba(0,0,0,0.07); }
+    .site-header .logo { color: var(--ink); }
+    .site-header .logo span { color: var(--muted); }
+    .nav-menu a { color: #555; }
+    .nav-menu a:hover, .nav-menu a.active { color: var(--navy); }
+
+    /* ====== HERO ====== */
+    .dh-hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      padding-top: 70px;
+    }
+
+    .dh-hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem 5rem 8rem 6vw;
+    }
+
+    .dh-hero-eyebrow {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.72rem;
+      letter-spacing: 0.45em;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    .dh-hero h1 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.8rem, 5vw, 5rem);
+      letter-spacing: 0.04em;
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 2.5rem;
+    }
+
+    .dh-hero h1 span {
+      display: block;
+      font-style: italic;
+      color: var(--navy);
+    }
+
+    .dh-hero-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--ink);
+      margin-bottom: 2rem;
+    }
+
+    .dh-hero-catch {
+      font-family: var(--nserif);
+      font-weight: 200;
+      font-size: clamp(0.85rem, 1.4vw, 1rem);
+      color: #444;
+      line-height: 2.2;
+      letter-spacing: 0.1em;
+      max-width: 360px;
+    }
+
+    .dh-hero-right {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dh-hero-right-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Large decorative letter */
+    .dh-hero-deco {
+      font-family: var(--serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(12rem, 22vw, 22rem);
+      color: rgba(255,255,255,0.04);
+      user-select: none;
+      line-height: 1;
+    }
+
+    .dh-hero-caption {
+      position: absolute;
+      bottom: 3rem;
+      left: 3rem;
+      right: 3rem;
+    }
+
+    .dh-hero-caption p {
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+    }
+
+    .dh-hero-caption h2 {
+      font-family: var(--nserif);
+      font-weight: 200;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.85);
+      margin-top: 0.6rem;
+      line-height: 1.6;
+    }
+
+    /* ====== SECTION BASE ====== */
+    .ds {
+      padding: 9rem 6vw;
+    }
+
+    .ds-narrow {
+      max-width: 760px;
+    }
+
+    .ds-label {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.7rem;
+      letter-spacing: 0.45em;
+      color: var(--muted);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .ds-h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(1.8rem, 3.5vw, 3rem);
+      letter-spacing: 0.06em;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .ds-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--navy);
+      margin: 2.2rem 0;
+    }
+
+    .ds-body {
+      font-family: var(--nserif);
+      font-weight: 200;
+      font-size: 0.92rem;
+      color: #555;
+      line-height: 2.4;
+      letter-spacing: 0.07em;
+    }
+
+    /* ====== ABOUT — magazine split ====== */
+    .dh-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      background: var(--off);
+    }
+
+    .dh-about-text {
+      padding: 9rem 5rem 9rem 6vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .dh-about-vis {
+      background: var(--navy2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 540px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dh-about-vis-txt {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 300;
+      color: rgba(255,255,255,0.1);
+      padding: 2rem;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .dh-about-vis-tag {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 2.5rem;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: rgba(255,255,255,0.3);
+      text-transform: uppercase;
+      font-family: var(--sans);
+    }
+
+    /* ====== SERVICES — vertical list ====== */
+    .dh-services {
+      padding: 9rem 6vw;
+    }
+
+    .dh-svc-list {
+      margin-top: 5rem;
+      border-top: 1px solid var(--light);
+    }
+
+    .dh-svc-item {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+      gap: 0 4rem;
+      align-items: start;
+      padding: 3.5rem 0;
+      border-bottom: 1px solid var(--light);
+      transition: background 0.3s;
+    }
+
+    .dh-svc-item:hover {
+      background: var(--off);
+      margin: 0 -6vw;
+      padding-left: 6vw;
+      padding-right: 6vw;
+    }
+
+    .dh-svc-n {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      padding-top: 0.3rem;
+    }
+
+    .dh-svc-title {
+      font-family: var(--nserif);
+      font-weight: 300;
+      font-size: clamp(1rem, 1.8vw, 1.3rem);
+      color: var(--ink);
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+
+    .dh-svc-en {
+      display: block;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.2em;
+      margin-bottom: 0.3rem;
+    }
+
+    .dh-svc-body {
+      font-size: 0.8rem;
+      color: #777;
+      line-height: 2.1;
+      letter-spacing: 0.04em;
+    }
+
+    /* ====== GALLERY ====== */
+    .dh-gallery {
+      padding: 9rem 6vw;
+      background: var(--off);
+    }
+
+    .dh-gallery-grid {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 80px;
+      gap: 12px;
+    }
+
+    /* Magazine-style asymmetric cells */
+    .dh-cell {
+      background: var(--white);
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dh-cell-a { grid-column: span 5; grid-row: span 5; }
+    .dh-cell-b { grid-column: span 4; grid-row: span 3; }
+    .dh-cell-c { grid-column: span 3; grid-row: span 3; }
+    .dh-cell-d { grid-column: span 4; grid-row: span 2; background: var(--navy); }
+    .dh-cell-e { grid-column: span 3; grid-row: span 4; }
+    .dh-cell-f { grid-column: span 5; grid-row: span 4; }
+    .dh-cell-g { grid-column: span 4; grid-row: span 2; }
+
+    .dh-cell-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .dh-cell-placeholder span {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: #ccc;
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .dh-cell-placeholder .dh-ph-icon {
+      font-size: 1.4rem;
+      opacity: 0.3;
+    }
+
+    /* navy cell special text */
+    .dh-cell-d .dh-cell-placeholder span {
+      color: rgba(255,255,255,0.3);
+    }
+
+    .dh-gallery-note {
+      margin-top: 2rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      letter-spacing: 0.15em;
+      font-family: var(--serif);
+      font-style: italic;
+    }
+
+    /* ====== FLOW ====== */
+    .dh-flow {
+      padding: 9rem 6vw;
+    }
+
+    .dh-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 5rem;
+      border-left: 1px solid var(--light);
+    }
+
+    .dh-flow-step {
+      padding: 3rem 2.5rem;
+      border-right: 1px solid var(--light);
+      border-bottom: 1px solid var(--light);
+      border-top: 1px solid var(--light);
+    }
+
+    .dh-flow-n {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--light);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .dh-flow-step h3 {
+      font-family: var(--nserif);
+      font-weight: 300;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .dh-flow-step p {
+      font-size: 0.77rem;
+      color: #888;
+      line-height: 2.1;
+      letter-spacing: 0.04em;
+    }
+
+    /* ====== CTA ====== */
+    .dh-cta {
+      background: var(--navy);
+      padding: 10rem 6vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .dh-cta-left h2 {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.06em;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+
+    .dh-cta-left h2 em {
+      font-style: italic;
+      color: rgba(255,255,255,0.5);
+      display: block;
+      font-size: 0.7em;
+    }
+
+    .dh-cta-left p {
+      font-family: var(--nserif);
+      font-weight: 200;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.45);
+      line-height: 2.3;
+      letter-spacing: 0.08em;
+      max-width: 420px;
+    }
+
+    .dh-cta-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .dh-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 2.5rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .dh-contact-row {
+      display: grid;
+      grid-template-columns: 60px 1fr;
+      gap: 1rem;
+      font-size: 0.78rem;
+    }
+
+    .dh-contact-label {
+      font-family: var(--serif);
+      font-style: italic;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.2em;
+    }
+
+    .dh-contact-val {
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.05em;
+    }
+
+    .dh-contact-val a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .dh-btn {
+      display: inline-block;
+      padding: 1.1rem 3rem;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+      font-family: var(--sans);
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.38em;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.3s, border-color 0.3s;
+    }
+
+    .dh-btn:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.55);
+    }
+
+    /* ====== FOOTER ====== */
+    .site-footer { background: #0a1220; border-top: 1px solid rgba(255,255,255,0.06); }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 960px) {
+      .dh-hero { grid-template-columns: 1fr; min-height: auto; }
+      .dh-hero-right { min-height: 380px; }
+      .dh-hero-left { padding: 5rem 6vw 4rem; }
+      .dh-about { grid-template-columns: 1fr; }
+      .dh-about-vis { min-height: 300px; }
+      .dh-about-text { padding: 5rem 6vw; }
+      .dh-svc-item { grid-template-columns: 40px 1fr; }
+      .dh-svc-body { grid-column: 2; }
+      .dh-flow-grid { grid-template-columns: 1fr 1fr; }
+      .dh-cta { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 6vw; }
+    }
+
+    @media (max-width: 600px) {
+      .ds { padding: 5rem 5vw; }
+      .dh-services { padding: 5rem 5vw; }
+      .dh-flow-grid { grid-template-columns: 1fr; }
+      .dh-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 140px;
+      }
+      .dh-cell-a,.dh-cell-b,.dh-cell-c,.dh-cell-d,
+      .dh-cell-e,.dh-cell-f,.dh-cell-g {
+        grid-column: span 1; grid-row: span 1;
+      }
+      .dh-svc-item { grid-template-columns: 1fr; }
+      .dh-svc-n { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-  <header class="site-header">
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
     <a href="index.html" class="logo">
       HASIBUNE
       <span>株式会社HASIBUNE</span>
@@ -27,150 +568,265 @@
         <li><a href="services.html">サービス</a></li>
         <li><a href="wine.html">ワイン</a></li>
         <li><a href="wine-original.html">オリジナルワイン</a></li>
-        <li><a href="design.html">デザイン</a></li>
+        <li><a href="design.html" class="active">デザイン</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
       </ul>
     </nav>
   </header>
 
-  <div class="page-hero">
-    <div class="page-hero-inner">
-      <p class="section-label">Design & Web</p>
-      <h1>デザイン・ウェブデザイン</h1>
-    </div>
-  </div>
 
-  <!-- INTRO -->
-  <section class="section">
-    <div class="section-inner" style="max-width:760px;">
-      <p class="section-label">Creative</p>
-      <h2 class="section-title">デザインで、ブランドを育てる</h2>
-      <p style="color:#555;line-height:2;margin-bottom:1.5rem;">
-        デザインとは単なる見た目ではなく、ブランドの思想・価値・個性を視覚的に伝えるコミュニケーションです。HASIBUNEはグラフィックデザインからウェブサイト制作まで、一貫した世界観でお客様のブランドを表現します。
+  <!-- ① HERO -->
+  <section class="dh-hero">
+    <div class="dh-hero-left">
+      <span class="dh-hero-eyebrow">Design &amp; Branding — HASIBUNE</span>
+      <h1>
+        DESIGN<br>
+        <span>/ BRANDING</span>
+      </h1>
+      <div class="dh-hero-rule"></div>
+      <p class="dh-hero-catch">
+        ブランドは、見た目ではなく<br>
+        記憶に残る体験。
       </p>
     </div>
-  </section>
-
-  <!-- GRAPHIC DESIGN -->
-  <section class="section bg-light">
-    <div class="section-inner">
-      <p class="section-label">Graphic Design</p>
-      <h2 class="section-title">グラフィックデザイン</h2>
-      <p class="section-subtitle">ブランドの顔をつくる、印刷物・デジタル素材のデザイン。</p>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon">✏️</div>
-          <h3>ロゴ・ブランドデザイン</h3>
-          <p>企業・店舗・商品のロゴマーク制作。ブランドガイドライン策定も対応。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📄</div>
-          <h3>名刺・会社案内</h3>
-          <p>印象に残る名刺・パンフレット・会社案内。紙媒体のデザインから印刷手配まで。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🖼️</div>
-          <h3>ポスター・バナー</h3>
-          <p>イベント告知・店頭POPからSNS用バナーまで、目を引くビジュアルを制作。</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📦</div>
-          <h3>パッケージデザイン</h3>
-          <p>商品パッケージ・ラベルのデザイン。棚に並んだときに映えるデザインを追求。</p>
-        </div>
+    <div class="dh-hero-right">
+      <div class="dh-hero-right-inner">
+        <span class="dh-hero-deco">B</span>
+      </div>
+      <div class="dh-hero-caption">
+        <p>Brand Identity &amp; Visual Design</p>
+        <h2>
+          形のないものに、<br>
+          かたちを与える仕事。
+        </h2>
       </div>
     </div>
   </section>
 
-  <!-- WEB DESIGN -->
-  <section class="section">
-    <div class="section-inner">
-      <p class="section-label">Web Design</p>
-      <h2 class="section-title">ウェブデザイン・制作</h2>
-      <p class="section-subtitle">使いやすく美しいウェブサイトで、オンラインのプレゼンスを高めます。</p>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+  <!-- ② ブランド制作について -->
+  <section class="dh-about">
+    <div class="dh-about-text">
+      <span class="ds-label">— About Our Design —</span>
+      <h2 class="ds-h2">
+        デザインとは<br>
+        ブランドの<br>
+        声である。
+      </h2>
+      <div class="ds-rule"></div>
+      <p class="ds-body">
+        HASIBUNEのデザインは、表面的な美しさではなく、<br>
+        ブランドの思想・哲学・物語を視覚言語に翻訳することを目的とします。<br><br>
+        ロゴひとつ、名刺一枚、ラベルの一行に至るまで、<br>
+        すべての選択に意味と意図を宿らせます。<br><br>
+        それが、時を経ても色褪せないブランドをつくる唯一の方法だと、<br>
+        私たちは信じています。
+      </p>
+    </div>
+    <div class="dh-about-vis">
+      <p class="dh-about-vis-txt">
+        Form<br>
+        follows<br>
+        meaning.
+      </p>
+      <span class="dh-about-vis-tag">HASIBUNE Design Philosophy</span>
+    </div>
+  </section>
+
+
+  <!-- ③ 制作領域 -->
+  <section class="dh-services">
+    <div>
+      <span class="ds-label">— Creative Services —</span>
+      <h2 class="ds-h2">制作領域</h2>
+    </div>
+
+    <div class="dh-svc-list">
+
+      <div class="dh-svc-item">
+        <span class="dh-svc-n">01</span>
         <div>
-          <ul style="display:flex;flex-direction:column;gap:1.5rem;">
-            <li style="display:flex;gap:1rem;align-items:flex-start;">
-              <span style="color:var(--color-accent);font-size:1.2rem;margin-top:2px;">01</span>
-              <div>
-                <strong style="display:block;margin-bottom:0.3rem;color:var(--color-primary);">コーポレートサイト</strong>
-                <p style="color:#666;font-size:0.9rem;line-height:1.8;">企業の信頼性を高める、洗練されたコーポレートウェブサイトの設計・制作。</p>
-              </div>
-            </li>
-            <li style="display:flex;gap:1rem;align-items:flex-start;">
-              <span style="color:var(--color-accent);font-size:1.2rem;margin-top:2px;">02</span>
-              <div>
-                <strong style="display:block;margin-bottom:0.3rem;color:var(--color-primary);">ランディングページ（LP）</strong>
-                <p style="color:#666;font-size:0.9rem;line-height:1.8;">商品・サービスの訴求に特化した、コンバージョンを高めるLPを制作。</p>
-              </div>
-            </li>
-            <li style="display:flex;gap:1rem;align-items:flex-start;">
-              <span style="color:var(--color-accent);font-size:1.2rem;margin-top:2px;">03</span>
-              <div>
-                <strong style="display:block;margin-bottom:0.3rem;color:var(--color-primary);">ECサイト・ショップ</strong>
-                <p style="color:#666;font-size:0.9rem;line-height:1.8;">オンライン販売を始めたい方へ、ECサイトの構築から運用サポートまで。</p>
-              </div>
-            </li>
-            <li style="display:flex;gap:1rem;align-items:flex-start;">
-              <span style="color:var(--color-accent);font-size:1.2rem;margin-top:2px;">04</span>
-              <div>
-                <strong style="display:block;margin-bottom:0.3rem;color:var(--color-primary);">保守・更新サポート</strong>
-                <p style="color:#666;font-size:0.9rem;line-height:1.8;">公開後のサイト管理、コンテンツ更新、セキュリティ対応をサポート。</p>
-              </div>
-            </li>
-          </ul>
+          <span class="dh-svc-en">Logo Design</span>
+          <h3 class="dh-svc-title">ロゴ制作</h3>
         </div>
+        <p class="dh-svc-body">
+          ブランドの核心を一つの造形に凝縮します。シンボルマーク・ロゴタイプ・複合ロゴの設計から、カラーシステム・タイポグラフィの策定まで、ブランドアイデンティティ全体を一貫して設計します。
+        </p>
+      </div>
 
-        <div style="background:var(--color-bg-light);height:380px;display:flex;align-items:center;justify-content:center;">
-          <span style="color:#ccc;font-size:0.8rem;letter-spacing:0.2em;">IMAGE PLACEHOLDER</span>
+      <div class="dh-svc-item">
+        <span class="dh-svc-n">02</span>
+        <div>
+          <span class="dh-svc-en">Business Card &amp; Print</span>
+          <h3 class="dh-svc-title">名刺デザイン</h3>
         </div>
+        <p class="dh-svc-body">
+          手に渡った瞬間に印象を決める名刺は、ブランドの第一声です。用紙・印刷・加工（箔押し・エンボス・特殊ニス）にまでこだわり、記憶に残る一枚を制作します。
+        </p>
+      </div>
+
+      <div class="dh-svc-item">
+        <span class="dh-svc-n">03</span>
+        <div>
+          <span class="dh-svc-en">Label &amp; Packaging</span>
+          <h3 class="dh-svc-title">ラベルデザイン</h3>
+        </div>
+        <p class="dh-svc-body">
+          商品の世界観をパッケージで体現します。ワインラベル・食品パッケージ・化粧品ボトルなど、棚に並んだとき・手に取ったときの感動を設計します。素材・印刷技法の選定も一体でサポートします。
+        </p>
+      </div>
+
+      <div class="dh-svc-item">
+        <span class="dh-svc-n">04</span>
+        <div>
+          <span class="dh-svc-en">Web Design</span>
+          <h3 class="dh-svc-title">ウェブデザイン</h3>
+        </div>
+        <p class="dh-svc-body">
+          ブランドの世界観をデジタル空間に拡張します。コーポレートサイト・ランディングページ・ECサイトの設計・制作から、公開後の保守・運用支援まで一貫して対応します。
+        </p>
+      </div>
+
+      <div class="dh-svc-item">
+        <span class="dh-svc-n">05</span>
+        <div>
+          <span class="dh-svc-en">Brand Concept Design</span>
+          <h3 class="dh-svc-title">ブランドコンセプト設計</h3>
+        </div>
+        <p class="dh-svc-body">
+          ブランドの存在理由・価値観・語りかける相手を言語化し、すべてのクリエイティブの土台を設計します。ミッション・ビジョン・ブランドボイスの策定から、ビジュアルガイドラインの整備まで対応します。
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ④ ギャラリー -->
+  <section class="dh-gallery">
+    <div>
+      <span class="ds-label">— Works —</span>
+      <h2 class="ds-h2">制作実績</h2>
+    </div>
+
+    <div class="dh-gallery-grid">
+      <div class="dh-cell dh-cell-a">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Logo / Brand Identity</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-b">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Label Design</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-c">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Business Card</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-d">
+        <div class="dh-cell-placeholder">
+          <span>Web Design</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-e">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Packaging</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-f">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Brand Concept</span>
+        </div>
+      </div>
+      <div class="dh-cell dh-cell-g">
+        <div class="dh-cell-placeholder">
+          <span class="dh-ph-icon">◻</span>
+          <span>Print Design</span>
+        </div>
+      </div>
+    </div>
+    <p class="dh-gallery-note">— 実績画像は順次掲載予定です —</p>
+  </section>
+
+
+  <!-- ⑤ 制作の流れ -->
+  <section class="dh-flow">
+    <div>
+      <span class="ds-label">— Process —</span>
+      <h2 class="ds-h2">制作の流れ</h2>
+    </div>
+
+    <div class="dh-flow-grid">
+      <div class="dh-flow-step">
+        <div class="dh-flow-n">01</div>
+        <h3>ヒアリング</h3>
+        <p>ブランドの背景・目的・ターゲット・競合・ご予算を丁寧にお伺いします。初回相談は無料です。</p>
+      </div>
+      <div class="dh-flow-step">
+        <div class="dh-flow-n">02</div>
+        <h3>コンセプト設計</h3>
+        <p>ブランドの核となる言葉・世界観・ビジュアル方向性を設計し、クリエイティブブリーフを策定します。</p>
+      </div>
+      <div class="dh-flow-step">
+        <div class="dh-flow-n">03</div>
+        <h3>デザイン制作</h3>
+        <p>複数案を提示し、フィードバックをもとに精度を高めます。修正は回数を区切らず丁寧に対応します。</p>
+      </div>
+      <div class="dh-flow-step">
+        <div class="dh-flow-n">04</div>
+        <h3>納品・展開サポート</h3>
+        <p>各種用途に対応したデータを納品します。印刷・実装・ガイドライン整備のサポートも承ります。</p>
       </div>
     </div>
   </section>
 
-  <!-- FLOW -->
-  <section class="section bg-light">
-    <div class="section-inner">
-      <p class="section-label">Process</p>
-      <h2 class="section-title">制作の流れ</h2>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;counter-reset:step;">
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:2rem;color:var(--color-accent);font-family:var(--font-heading);margin-bottom:0.8rem;">01</div>
-          <h3 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:0.5rem;color:var(--color-primary);">ヒアリング</h3>
-          <p style="font-size:0.85rem;color:#666;line-height:1.8;">目的・ターゲット・ご要望を丁寧にお聞きします。</p>
+  <!-- ⑥ お問い合わせ導線 -->
+  <section class="dh-cta">
+    <div class="dh-cta-left">
+      <h2>
+        <em>Let's create something</em>
+        ブランドの物語を、<br>
+        ともに設計しましょう。
+      </h2>
+      <p>
+        ロゴ一本のご依頼から、ブランド全体のリブランディングまで。<br>
+        規模を問わず、丁寧にお応えします。<br>
+        初回のご相談は無料です。
+      </p>
+    </div>
+    <div class="dh-cta-right">
+      <div class="dh-contact-info">
+        <div class="dh-contact-row">
+          <span class="dh-contact-label">Email</span>
+          <span class="dh-contact-val">
+            <a href="mailto:takuya19781026@gmail.com">takuya19781026@gmail.com</a>
+          </span>
         </div>
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:2rem;color:var(--color-accent);font-family:var(--font-heading);margin-bottom:0.8rem;">02</div>
-          <h3 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:0.5rem;color:var(--color-primary);">提案・見積</h3>
-          <p style="font-size:0.85rem;color:#666;line-height:1.8;">コンセプト案と費用・スケジュールをご提案。</p>
+        <div class="dh-contact-row">
+          <span class="dh-contact-label">Mobile</span>
+          <span class="dh-contact-val">
+            <a href="tel:08040382368">080-4038-2368</a>
+          </span>
         </div>
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:2rem;color:var(--color-accent);font-family:var(--font-heading);margin-bottom:0.8rem;">03</div>
-          <h3 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:0.5rem;color:var(--color-primary);">デザイン制作</h3>
-          <p style="font-size:0.85rem;color:#666;line-height:1.8;">ラフ→デザイン案提示→修正を繰り返し仕上げます。</p>
-        </div>
-        <div style="text-align:center;padding:2rem 1rem;">
-          <div style="font-size:2rem;color:var(--color-accent);font-family:var(--font-heading);margin-bottom:0.8rem;">04</div>
-          <h3 style="font-family:var(--font-heading);font-size:1rem;margin-bottom:0.5rem;color:var(--color-primary);">納品・公開</h3>
-          <p style="font-size:0.85rem;color:#666;line-height:1.8;">最終確認後、データ納品またはサイト公開。</p>
+        <div class="dh-contact-row">
+          <span class="dh-contact-label">Hours</span>
+          <span class="dh-contact-val">平日 10:00 – 18:00</span>
         </div>
       </div>
+      <a href="contact.html" class="dh-btn">お問い合わせフォームへ</a>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section" style="text-align:center;">
-    <div class="section-inner">
-      <h2 class="section-title">デザインのご依頼・ご相談</h2>
-      <p style="color:#666;max-width:480px;margin:0 auto 2.5rem;">まずはお気軽にご相談ください。無料でお見積もりをご提示します。</p>
-      <a href="contact.html" class="btn btn-fill">お問い合わせ</a>
-    </div>
-  </section>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -188,6 +844,7 @@
           <li><a href="about.html">会社概要</a></li>
           <li><a href="services.html">サービス</a></li>
           <li><a href="wine.html">ワイン販売</a></li>
+          <li><a href="wine-original.html">オリジナルワイン制作</a></li>
           <li><a href="design.html">デザイン・ウェブデザイン</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
         </ul>
@@ -199,5 +856,12 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // ヘッダー：白背景ページなのでスクロール時に影を追加
+    const hdr = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      hdr.style.boxShadow = window.scrollY > 40 ? '0 1px 0 rgba(0,0,0,0.08)' : 'none';
+    }, { passive: true });
+  </script>
 </body>
 </html>
