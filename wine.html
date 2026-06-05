@@ -11,12 +11,51 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .wine-hero {
-      min-height: 36vh;
-      background: linear-gradient(135deg, #3d0c02, #7b1818, #4a1010);
+      position: relative;
+      min-height: 70vh;
       display: flex;
       align-items: flex-end;
-      padding: 6rem 2rem 3rem;
+      padding: 6rem 2rem 3.5rem;
       color: #fff;
+      overflow: hidden;
+    }
+    .wine-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .wine-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(8,6,4,0.3) 0%,
+        rgba(8,6,4,0.05) 40%,
+        rgba(8,6,4,0.6) 75%,
+        rgba(8,6,4,0.88) 100%
+      );
+    }
+    .wine-hero .page-hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .wine-hero .page-hero-inner h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      letter-spacing: 0.15em;
+    }
+    .wine-hero-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.45rem 1.4rem;
+      border: 1px solid rgba(184,150,62,0.55);
+      color: #d4b872;
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
     }
   </style>
 </head>
@@ -44,9 +83,12 @@
   </header>
 
   <div class="wine-hero">
+    <img class="wine-hero-img" src="images/soupir-hero.jpg" alt="Soupir d'amour — スピー・ダムール スパークリングワイン">
+    <div class="wine-hero-overlay"></div>
     <div class="page-hero-inner">
       <p class="section-label">Wine</p>
       <h1>ワイン販売</h1>
+      <div class="wine-hero-badge">Soupir d'amour — オリジナルワイン制作も承ります</div>
     </div>
   </div>
 
@@ -61,6 +103,65 @@
       <p style="color:#555;line-height:2;">
         お客様のシーンやご予算、好みのスタイルに合わせて、最適なワインをご提案いたします。
       </p>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENT: Soupir d'amour -->
+  <section class="section" style="background:#0c0a07;color:#f0ebe0;">
+    <div class="section-inner">
+      <p class="section-label" style="color:#b8963e;">— Original Wine Works —</p>
+      <h2 class="section-title" style="color:#f0ebe0;">オリジナルワイン制作実績</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(184,150,62,0.2);margin-top:3rem;">
+        <!-- 画像 -->
+        <div style="position:relative;min-height:460px;overflow:hidden;">
+          <img
+            src="images/soupir-hero.jpg"
+            alt="Soupir d'amour"
+            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center;filter:brightness(0.8);"
+          >
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,6,4,0.5) 0%,transparent 55%);"></div>
+        </div>
+        <!-- テキスト -->
+        <div style="padding:3.5rem;display:flex;flex-direction:column;justify-content:center;gap:1.8rem;background:rgba(255,255,255,0.02);">
+          <div>
+            <p style="font-family:'Noto Serif JP',serif;font-size:1.7rem;font-weight:300;letter-spacing:0.08em;color:#d4b872;font-style:italic;font-family:'Georgia',serif;">Soupir d'amour</p>
+            <p style="font-size:0.8rem;letter-spacing:0.3em;color:rgba(240,235,224,0.5);margin-top:0.3rem;">スピー・ダムール</p>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:0.9rem;padding:1.5rem 0;border-top:1px solid rgba(184,150,62,0.15);border-bottom:1px solid rgba(184,150,62,0.15);">
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:0.5rem;font-size:0.8rem;">
+              <span style="color:#b8963e;letter-spacing:0.2em;font-size:0.65rem;">TYPE</span>
+              <span style="color:rgba(240,235,224,0.65);">スパークリングワイン</span>
+            </div>
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:0.5rem;font-size:0.8rem;">
+              <span style="color:#b8963e;letter-spacing:0.2em;font-size:0.65rem;">ORIGIN</span>
+              <span style="color:rgba(240,235,224,0.65);">Made in Japan</span>
+            </div>
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:0.5rem;font-size:0.8rem;">
+              <span style="color:#b8963e;letter-spacing:0.2em;font-size:0.65rem;">BLEND</span>
+              <span style="color:rgba(240,235,224,0.65);">実生柚子 × シャルドネ</span>
+            </div>
+            <div style="display:grid;grid-template-columns:80px 1fr;gap:0.5rem;font-size:0.8rem;">
+              <span style="color:#b8963e;letter-spacing:0.2em;font-size:0.65rem;">ABV</span>
+              <span style="color:rgba(240,235,224,0.65);">7.5%  /  750ml</span>
+            </div>
+          </div>
+
+          <p style="font-size:0.8rem;color:rgba(240,235,224,0.45);line-height:2.2;letter-spacing:0.04em;">
+            やさしい甘さと華やかな香り。<br>
+            特別な夜に寄り添う、上質なスパークリングワイン。<br>
+            ラベルには流れ星のように輝く女性のシルエットを描き、<br>
+            贈る喜びそのものをビジュアルで表現しました。
+          </p>
+
+          <a href="wine-original.html" style="display:inline-block;padding:0.85rem 2rem;border:1px solid rgba(184,150,62,0.5);color:#d4b872;font-size:0.7rem;letter-spacing:0.35em;font-family:'Noto Sans JP',sans-serif;font-weight:300;transition:background 0.3s;text-decoration:none;width:fit-content;"
+            onmouseover="this.style.background='rgba(184,150,62,0.12)'"
+            onmouseout="this.style.background='transparent'">
+            オリジナルワイン制作を見る
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
