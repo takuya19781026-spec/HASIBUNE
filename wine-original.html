@@ -4,632 +4,552 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>オリジナルワイン制作 | 株式会社HASIBUNE</title>
-  <meta name="description" content="HASIBUNEのオリジナルワイン制作サービス。ブランドや記念の想いを、世界にひとつだけのワインとして形に。実績「スピー・ダムール」。">
+  <meta name="description" content="世界にひとつだけの物語を、一本のワインに。HASIBUNEのオリジナルワイン制作サービス。実績「スピー・ダムール」。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* ========================================
-       PAGE-SPECIFIC: WINE ORIGINAL
-       Luxury / Maison style
-    ======================================== */
+
+    /* ============================================
+       BASE OVERRIDES FOR LUXURY DARK THEME
+    ============================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --wo-dark:   #0c0a07;
-      --wo-deep:   #1a1510;
-      --wo-burgundy: #5c1a1a;
-      --wo-gold:   #b8963e;
-      --wo-gold-lt: #d4b06a;
-      --wo-cream:  #f0ebe0;
-      --wo-warm:   #e8e0d0;
+      --g: #b8963e;          /* gold */
+      --gl: #d4b872;         /* gold light */
+      --gd: #7a6028;         /* gold dark */
+      --ink: #080604;        /* near-black */
+      --ink2: #100d09;
+      --cream: #f0ebe0;
+      --muted: rgba(240,235,224,0.45);
     }
 
-    /* --- Global overrides for this page --- */
-    body.wine-original-page {
-      background: var(--wo-dark);
-      color: var(--wo-cream);
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
     }
 
-    body.wine-original-page .site-header {
-      background: rgba(12, 10, 7, 0.92);
-      border-bottom: 1px solid rgba(184, 150, 62, 0.15);
+    /* nav override */
+    .site-header {
+      background: transparent;
+      border-bottom: none;
+      transition: background 0.5s;
+    }
+    .site-header.scrolled {
+      background: rgba(8,6,4,0.92);
+      border-bottom: 1px solid rgba(184,150,62,0.12);
     }
 
-    /* ---- HERO ---- */
-    .wo-hero {
+    /* ============================================
+       HERO — FULL SCREEN
+    ============================================ */
+    .lp-hero {
       position: relative;
-      min-height: 100vh;
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
       overflow: hidden;
-      background: var(--wo-dark);
     }
 
-    .wo-hero-bg {
+    /* The actual photo */
+    .lp-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    /* subtle dark vignette over photo */
+    .lp-hero-overlay {
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 80% at 50% 60%, rgba(92, 26, 26, 0.35) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 40% at 80% 20%, rgba(184, 150, 62, 0.08) 0%, transparent 60%),
-        linear-gradient(180deg, #0c0a07 0%, #120e0b 40%, #1a1208 100%);
+        linear-gradient(to bottom,
+          rgba(8,6,4,0.35) 0%,
+          rgba(8,6,4,0.10) 35%,
+          rgba(8,6,4,0.05) 50%,
+          rgba(8,6,4,0.55) 78%,
+          rgba(8,6,4,0.92) 100%
+        );
     }
 
-    /* decorative vertical lines */
-    .wo-hero-lines {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-    }
-
-    .wo-hero-lines::before,
-    .wo-hero-lines::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: linear-gradient(180deg, transparent 0%, rgba(184,150,62,0.2) 30%, rgba(184,150,62,0.2) 70%, transparent 100%);
-    }
-
-    .wo-hero-lines::before { left: 15%; }
-    .wo-hero-lines::after  { right: 15%; }
-
-    .wo-hero-inner {
+    /* text block sitting above bottom */
+    .lp-hero-text {
       position: relative;
       z-index: 2;
       text-align: center;
-      padding: 120px 2rem 6rem;
-      max-width: 800px;
+      padding: 0 2rem 7vh;
+      width: 100%;
     }
 
-    .wo-eyebrow {
-      display: inline-block;
-      font-size: 0.65rem;
-      letter-spacing: 0.5em;
-      color: var(--wo-gold);
-      text-transform: uppercase;
-      margin-bottom: 2.5rem;
-      padding-bottom: 1rem;
-      position: relative;
-    }
-
-    .wo-eyebrow::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 40px;
-      height: 1px;
-      background: var(--wo-gold);
-    }
-
-    .wo-hero h1 {
+    .lp-hero-eyebrow {
+      display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      letter-spacing: 0.06em;
-      line-height: 1.08;
-      color: var(--wo-cream);
-      margin-bottom: 0.3em;
-    }
-
-    .wo-hero h1 em {
       font-style: italic;
-      color: var(--wo-gold-lt);
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      letter-spacing: 0.45em;
+      color: var(--g);
+      margin-bottom: 1.4rem;
+      text-transform: uppercase;
     }
 
-    .wo-hero-jp {
+    .lp-hero h1 {
       font-family: 'Noto Serif JP', serif;
-      font-weight: 300;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      letter-spacing: 0.3em;
-      color: rgba(240, 235, 224, 0.6);
+      font-weight: 200;
+      font-size: clamp(1.6rem, 4vw, 3rem);
+      letter-spacing: 0.35em;
+      color: var(--cream);
+      margin-bottom: 1.4rem;
+      line-height: 1.3;
+    }
+
+    .lp-hero-rule {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, transparent, var(--g), transparent);
+      margin: 0 auto 1.4rem;
+    }
+
+    .lp-hero-sub {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(0.8rem, 1.8vw, 1.05rem);
+      letter-spacing: 0.22em;
+      color: rgba(240,235,224,0.72);
+      line-height: 2;
       margin-bottom: 3rem;
     }
 
-    .wo-hero-desc {
-      font-size: 0.88rem;
-      color: rgba(240, 235, 224, 0.55);
-      letter-spacing: 0.08em;
-      line-height: 2.2;
-      max-width: 480px;
-      margin: 0 auto 3.5rem;
-    }
-
-    .wo-btn {
+    .lp-btn {
       display: inline-block;
-      padding: 1rem 3rem;
-      border: 1px solid rgba(184, 150, 62, 0.6);
-      color: var(--wo-gold-lt);
-      font-size: 0.7rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
+      padding: 1.05rem 3.2rem;
+      border: 1px solid rgba(184,150,62,0.55);
+      color: var(--gl);
       font-family: 'Noto Sans JP', sans-serif;
-      font-weight: 300;
-      transition: background 0.35s, border-color 0.35s, color 0.35s;
+      font-weight: 200;
+      font-size: 0.72rem;
+      letter-spacing: 0.38em;
+      text-decoration: none;
+      transition: background 0.35s, border-color 0.35s, color 0.35s, letter-spacing 0.35s;
+      position: relative;
     }
-
-    .wo-btn:hover {
-      background: rgba(184, 150, 62, 0.12);
-      border-color: var(--wo-gold);
-      color: var(--wo-cream);
-    }
-
-    .wo-btn-fill {
-      background: var(--wo-gold);
-      border-color: var(--wo-gold);
-      color: var(--wo-dark);
-    }
-
-    .wo-btn-fill:hover {
-      background: var(--wo-gold-lt);
-      border-color: var(--wo-gold-lt);
-      color: var(--wo-dark);
-    }
-
-    .wo-scroll-hint {
+    .lp-btn::before {
+      content: '';
       position: absolute;
-      bottom: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
+      inset: 3px;
+      border: 1px solid rgba(184,150,62,0.1);
+      pointer-events: none;
+    }
+    .lp-btn:hover {
+      background: rgba(184,150,62,0.14);
+      border-color: var(--g);
+      color: var(--cream);
+      letter-spacing: 0.42em;
+    }
+
+    /* scroll indicator */
+    .lp-scroll {
+      position: absolute;
+      bottom: 2.2rem;
+      right: 2.5rem;
+      z-index: 3;
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0.5rem;
+      writing-mode: vertical-rl;
+      font-size: 0.58rem;
+      letter-spacing: 0.35em;
       color: rgba(184,150,62,0.5);
-      font-size: 0.6rem;
-      letter-spacing: 0.3em;
     }
-
-    .wo-scroll-hint::after {
+    .lp-scroll::after {
       content: '';
       width: 1px;
-      height: 48px;
+      height: 52px;
       background: linear-gradient(180deg, rgba(184,150,62,0.5), transparent);
-      animation: scrollPulse 2s ease-in-out infinite;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 0.3; }
+      55% { opacity: 1; }
     }
 
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
+    /* ============================================
+       SECTION BASE
+    ============================================ */
+    .lp-sec {
+      padding: 9rem 2rem;
     }
-
-    /* ---- SECTIONS ---- */
-    .wo-section {
-      padding: 8rem 2rem;
-    }
-
-    .wo-section-inner {
-      max-width: 1100px;
+    .lp-inner {
+      max-width: 1040px;
       margin: 0 auto;
     }
-
-    .wo-section-header {
-      text-align: center;
-      margin-bottom: 5rem;
-    }
-
-    .wo-section-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
-      font-style: italic;
-      font-size: 0.8rem;
-      letter-spacing: 0.3em;
-      color: var(--wo-gold);
+    .lp-label {
       display: block;
-      margin-bottom: 1.2rem;
-    }
-
-    .wo-section-title {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 300;
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
-      letter-spacing: 0.15em;
-      color: var(--wo-cream);
-      margin-bottom: 0.6rem;
-    }
-
-    .wo-section-title-en {
       font-family: 'Cormorant Garamond', serif;
-      font-weight: 300;
       font-style: italic;
-      font-size: 0.85rem;
-      letter-spacing: 0.25em;
-      color: rgba(184, 150, 62, 0.6);
+      font-size: 0.72rem;
+      letter-spacing: 0.4em;
+      color: var(--g);
+      margin-bottom: 1.6rem;
     }
-
-    .wo-divider {
-      width: 60px;
+    .lp-h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      letter-spacing: 0.2em;
+      color: var(--cream);
+      margin-bottom: 0.8rem;
+    }
+    .lp-rule {
+      width: 48px;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--wo-gold), transparent);
-      margin: 2rem auto;
+      background: linear-gradient(90deg, transparent, var(--g), transparent);
+      margin: 1.8rem 0;
+    }
+    .lp-body {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 2.4;
+      letter-spacing: 0.06em;
     }
 
-    /* ---- WINE TYPES ---- */
-    .wo-bg-deep {
-      background: var(--wo-deep);
-    }
-
-    .wo-wine-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1px;
-      background: rgba(184, 150, 62, 0.1);
-      border: 1px solid rgba(184, 150, 62, 0.1);
-    }
-
-    .wo-wine-item {
-      background: var(--wo-deep);
-      padding: 3rem 2.5rem;
-      position: relative;
-      transition: background 0.3s;
-    }
-
-    .wo-wine-item:hover {
-      background: rgba(92, 26, 26, 0.15);
-    }
-
-    .wo-wine-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 2px;
-      height: 0;
-      background: var(--wo-gold);
-      transition: height 0.4s ease;
-    }
-
-    .wo-wine-item:hover::before {
-      height: 100%;
-    }
-
-    .wo-wine-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: rgba(184, 150, 62, 0.25);
-      line-height: 1;
-      margin-bottom: 1.2rem;
-    }
-
-    .wo-wine-item h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 400;
-      font-size: 1.05rem;
-      color: var(--wo-cream);
-      letter-spacing: 0.15em;
-      margin-bottom: 0.4rem;
-    }
-
-    .wo-wine-item .wo-wine-en {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.8rem;
-      color: var(--wo-gold);
-      letter-spacing: 0.15em;
-      margin-bottom: 1.2rem;
-      display: block;
-    }
-
-    .wo-wine-item p {
-      font-size: 0.82rem;
-      color: rgba(240, 235, 224, 0.5);
-      line-height: 2;
-      letter-spacing: 0.04em;
-    }
-
-    /* ---- ACHIEVEMENT ---- */
-    .wo-achievement {
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .wo-achievement-frame {
-      border: 1px solid rgba(184, 150, 62, 0.2);
+    /* ============================================
+       ACHIEVEMENT — split card
+    ============================================ */
+    .lp-card {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      min-height: 480px;
+      border: 1px solid rgba(184,150,62,0.15);
+      background: rgba(255,255,255,0.018);
     }
 
-    .wo-achievement-visual {
-      background: linear-gradient(160deg, #1a0d0d, #2d1010, #1a0808);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 3rem;
+    .lp-card-visual {
       position: relative;
+      min-height: 520px;
       overflow: hidden;
     }
-
-    .wo-achievement-visual::before {
-      content: '';
+    .lp-card-visual img {
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(92,26,26,0.5), transparent);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right center;
+      filter: brightness(0.75) saturate(1.1);
+      transition: transform 0.8s ease, filter 0.8s ease;
+    }
+    .lp-card-visual:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.85) saturate(1.15);
+    }
+    .lp-card-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8,6,4,0.55) 0%, transparent 60%);
     }
 
-    .wo-bottle-icon {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-    }
-
-    .wo-bottle-icon .bottle-svg {
-      width: 80px;
-      margin: 0 auto 2rem;
-      opacity: 0.85;
-    }
-
-    .wo-wine-name-ja {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 300;
-      font-size: 1.4rem;
-      letter-spacing: 0.3em;
-      color: var(--wo-cream);
-      text-align: center;
-      position: relative;
-      z-index: 1;
-      margin-bottom: 0.5rem;
-    }
-
-    .wo-wine-name-fr {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1rem;
-      letter-spacing: 0.2em;
-      color: var(--wo-gold);
-      text-align: center;
-      position: relative;
-      z-index: 1;
-    }
-
-    .wo-achievement-detail {
-      padding: 3.5rem;
+    .lp-card-body {
+      padding: 4rem 3.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 2rem;
     }
 
-    .wo-achievement-detail h3 {
-      font-family: 'Noto Serif JP', serif;
+    .lp-card-name-fr {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
       font-weight: 300;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      color: var(--wo-cream);
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(184,150,62,0.2);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: var(--gl);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
     }
-
-    .wo-achievement-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .wo-meta-row {
-      display: flex;
-      gap: 1rem;
-      align-items: baseline;
-    }
-
-    .wo-meta-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.3em;
-      color: var(--wo-gold);
-      white-space: nowrap;
-      min-width: 80px;
-    }
-
-    .wo-meta-val {
+    .lp-card-name-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
       font-size: 0.85rem;
-      color: rgba(240, 235, 224, 0.7);
-      line-height: 1.8;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.3em;
+      color: rgba(240,235,224,0.55);
+      margin-top: 0.3rem;
     }
 
-    .wo-achievement-note {
-      font-size: 0.8rem;
-      color: rgba(240, 235, 224, 0.4);
-      line-height: 2;
-      letter-spacing: 0.05em;
-    }
-
-    /* ---- FLOW ---- */
-    .wo-flow {
+    .lp-meta {
       display: flex;
       flex-direction: column;
-      max-width: 720px;
-      margin: 0 auto;
-      position: relative;
+      gap: 1rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid rgba(184,150,62,0.12);
+      border-bottom: 1px solid rgba(184,150,62,0.12);
+    }
+    .lp-meta-row {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 0.8rem;
+      font-size: 0.78rem;
+    }
+    .lp-meta-key {
+      color: var(--g);
+      letter-spacing: 0.2em;
+      font-size: 0.65rem;
+    }
+    .lp-meta-val {
+      color: rgba(240,235,224,0.6);
+      line-height: 1.8;
+      letter-spacing: 0.04em;
     }
 
-    .wo-flow::before {
+    .lp-card-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 2.2;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================
+       TYPES — horizontal scroll strip
+    ============================================ */
+    .lp-bg-layer {
+      background: rgba(255,255,255,0.018);
+    }
+
+    .lp-types-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(184,150,62,0.08);
+      border: 1px solid rgba(184,150,62,0.08);
+      margin-top: 4rem;
+    }
+
+    .lp-type {
+      background: var(--ink2);
+      padding: 2.8rem 2.4rem;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .lp-type::after {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 28px;
-      width: 1px;
-      background: linear-gradient(180deg, transparent, rgba(184,150,62,0.3) 10%, rgba(184,150,62,0.3) 90%, transparent);
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--g), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+    .lp-type:hover { background: rgba(184,150,62,0.04); }
+    .lp-type:hover::after { transform: scaleX(1); }
+
+    .lp-type-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 2rem;
+      color: rgba(184,150,62,0.18);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .lp-type h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+      margin-bottom: 0.3rem;
+    }
+    .lp-type-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      color: var(--g);
+      display: block;
+      margin-bottom: 1.1rem;
+    }
+    .lp-type p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 2;
+      letter-spacing: 0.04em;
     }
 
-    .wo-flow-item {
+    /* ============================================
+       FLOW — vertical timeline
+    ============================================ */
+    .lp-flow {
+      max-width: 680px;
+      margin: 4rem auto 0;
+      position: relative;
+    }
+    .lp-flow::before {
+      content: '';
+      position: absolute;
+      top: 28px; bottom: 28px; left: 27px;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, rgba(184,150,62,0.25) 8%, rgba(184,150,62,0.25) 92%, transparent);
+    }
+    .lp-step {
       display: grid;
       grid-template-columns: 56px 1fr;
       gap: 2rem;
-      padding: 2.5rem 0;
-      border-bottom: 1px solid rgba(184, 150, 62, 0.08);
+      padding: 2.2rem 0;
+      border-bottom: 1px solid rgba(184,150,62,0.07);
     }
-
-    .wo-flow-item:last-child {
-      border-bottom: none;
-    }
-
-    .wo-flow-num {
-      width: 56px;
-      height: 56px;
-      border: 1px solid rgba(184, 150, 62, 0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .lp-step:last-child { border-bottom: none; }
+    .lp-step-n {
+      width: 56px; height: 56px;
+      border: 1px solid rgba(184,150,62,0.35);
+      display: flex; align-items: center; justify-content: center;
       font-family: 'Cormorant Garamond', serif;
       font-weight: 300;
-      font-size: 1.1rem;
-      color: var(--wo-gold);
+      font-size: 1rem;
+      color: var(--g);
+      background: var(--ink);
       flex-shrink: 0;
-      background: var(--wo-dark);
       position: relative;
       z-index: 1;
     }
-
-    .wo-flow-content h3 {
+    .lp-step-body { padding-top: 0.9rem; }
+    .lp-step-body h3 {
       font-family: 'Noto Serif JP', serif;
-      font-weight: 400;
-      font-size: 1rem;
+      font-weight: 300;
+      font-size: 0.9rem;
       letter-spacing: 0.15em;
-      color: var(--wo-cream);
-      margin-bottom: 0.6rem;
-      padding-top: 0.8rem;
+      color: var(--cream);
+      margin-bottom: 0.5rem;
     }
-
-    .wo-flow-content p {
-      font-size: 0.82rem;
-      color: rgba(240, 235, 224, 0.45);
+    .lp-step-body p {
+      font-size: 0.77rem;
+      color: var(--muted);
       line-height: 2.1;
-      letter-spacing: 0.05em;
-    }
-
-    /* ---- TARGET ---- */
-    .wo-target-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-
-    .wo-target-card {
-      padding: 2.5rem;
-      border: 1px solid rgba(184, 150, 62, 0.12);
-      position: relative;
-      background: rgba(255,255,255,0.015);
-      transition: border-color 0.3s, background 0.3s;
-    }
-
-    .wo-target-card:hover {
-      border-color: rgba(184, 150, 62, 0.4);
-      background: rgba(184, 150, 62, 0.04);
-    }
-
-    .wo-target-card-icon {
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-      opacity: 0.75;
-    }
-
-    .wo-target-card h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-weight: 400;
-      font-size: 0.95rem;
-      letter-spacing: 0.15em;
-      color: var(--wo-cream);
-      margin-bottom: 0.8rem;
-    }
-
-    .wo-target-card p {
-      font-size: 0.8rem;
-      color: rgba(240, 235, 224, 0.45);
-      line-height: 2;
       letter-spacing: 0.04em;
     }
 
-    /* ---- CTA ---- */
-    .wo-cta {
-      background: linear-gradient(160deg, #0c0a07 0%, #1a120a 50%, #0c0a07 100%);
-      padding: 10rem 2rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* ============================================
+       FOR WHOM
+    ============================================ */
+    .lp-for-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .lp-for-card {
+      padding: 2.2rem;
+      border: 1px solid rgba(184,150,62,0.1);
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .lp-for-card:hover {
+      border-color: rgba(184,150,62,0.35);
+      background: rgba(184,150,62,0.03);
+    }
+    .lp-for-icon { font-size: 1.4rem; margin-bottom: 1rem; opacity: 0.7; }
+    .lp-for-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 300;
+      font-size: 0.88rem;
+      letter-spacing: 0.15em;
+      color: var(--cream);
+      margin-bottom: 0.7rem;
+    }
+    .lp-for-card p {
+      font-size: 0.76rem;
+      color: var(--muted);
+      line-height: 2;
+      letter-spacing: 0.03em;
     }
 
-    .wo-cta::before {
+    /* ============================================
+       FINAL CTA
+    ============================================ */
+    .lp-cta {
+      position: relative;
+      padding: 12rem 2rem;
+      text-align: center;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .lp-cta::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(184,150,62,0.07), transparent);
+      background:
+        radial-gradient(ellipse 55% 55% at 50% 50%, rgba(184,150,62,0.07), transparent 70%);
     }
-
-    .wo-cta-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .wo-cta-quote {
+    .lp-cta-inner { position: relative; z-index: 1; }
+    .lp-cta-quote {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-      font-weight: 300;
-      color: var(--wo-gold-lt);
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }
-
-    .wo-cta h2 {
-      font-family: 'Noto Serif JP', serif;
       font-weight: 300;
       font-size: clamp(1.3rem, 3vw, 2rem);
-      letter-spacing: 0.2em;
-      color: var(--wo-cream);
-      margin-bottom: 1.5rem;
+      color: var(--gl);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.2rem;
     }
-
-    .wo-cta p {
-      font-size: 0.82rem;
-      color: rgba(240, 235, 224, 0.45);
+    .lp-cta h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+      letter-spacing: 0.25em;
+      color: var(--cream);
+      margin-bottom: 1rem;
+    }
+    .lp-cta-rule {
+      width: 1px; height: 48px;
+      background: linear-gradient(to bottom, transparent, var(--g), transparent);
+      margin: 1.8rem auto;
+    }
+    .lp-cta p {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 2.4;
       letter-spacing: 0.08em;
-      line-height: 2.2;
-      max-width: 420px;
-      margin: 0 auto 3.5rem;
+      margin-bottom: 3.5rem;
     }
 
-    /* footer override for dark page */
-    body.wine-original-page .site-footer {
-      border-top: 1px solid rgba(184, 150, 62, 0.1);
+    /* ============================================
+       FOOTER OVERRIDE
+    ============================================ */
+    .site-footer {
+      border-top: 1px solid rgba(184,150,62,0.1);
     }
 
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 768px) {
-      .wo-achievement-frame {
-        grid-template-columns: 1fr;
-      }
-
-      .wo-achievement-visual {
-        min-height: 280px;
-        padding: 3rem 2rem;
-      }
-
-      .wo-achievement-detail {
-        padding: 2.5rem 2rem;
-      }
-
-      .wo-flow::before {
-        display: none;
-      }
-
-      .wo-section {
-        padding: 5rem 1.5rem;
-      }
+    /* ============================================
+       RESPONSIVE
+    ============================================ */
+    @media (max-width: 900px) {
+      .lp-card { grid-template-columns: 1fr; }
+      .lp-card-visual { min-height: 320px; }
+      .lp-types-grid { grid-template-columns: 1fr 1fr; }
+      .lp-for-grid { grid-template-columns: 1fr 1fr; }
     }
+    @media (max-width: 600px) {
+      .lp-types-grid { grid-template-columns: 1fr; }
+      .lp-for-grid { grid-template-columns: 1fr; }
+      .lp-flow::before { display: none; }
+      .lp-sec { padding: 5rem 1.5rem; }
+    }
+
   </style>
 </head>
-<body class="wine-original-page">
+<body>
 
   <!-- HEADER -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <a href="index.html" class="logo">
       HASIBUNE
       <span>株式会社HASIBUNE</span>
@@ -651,204 +571,194 @@
   </header>
 
 
-  <!-- ① HERO -->
-  <section class="wo-hero">
-    <div class="wo-hero-bg"></div>
-    <div class="wo-hero-lines"></div>
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       HERO — 全画面
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-hero">
 
-    <div class="wo-hero-inner">
-      <span class="wo-eyebrow">HASIBUNE Flagship Service</span>
+    <!-- 背景画像 -->
+    <img
+      class="lp-hero-img"
+      src="images/soupir-hero.jpg"
+      alt="Soupir d'amour — スピー・ダムール スパークリングワイン"
+    >
 
-      <h1>Original<br><em>Wine</em></h1>
-      <p class="wo-hero-jp">オリジナルワイン制作</p>
+    <!-- グラデーション -->
+    <div class="lp-hero-overlay"></div>
 
-      <p class="wo-hero-desc">
-        ブランドの物語を、一本のワインに。<br>
-        あなただけのラベル・ブレンド・ストーリーで、<br>
-        世界にたった一つのワインを生み出します。
+    <!-- テキスト -->
+    <div class="lp-hero-text">
+      <span class="lp-hero-eyebrow">HASIBUNE Original Wine</span>
+
+      <h1>オリジナルワイン制作</h1>
+
+      <div class="lp-hero-rule"></div>
+
+      <p class="lp-hero-sub">
+        世界にひとつだけの物語を、<br>
+        一本のワインに。
       </p>
 
-      <a href="#contact" class="wo-btn">制作を相談する</a>
+      <a href="#contact" class="lp-btn">制作相談はこちら</a>
     </div>
 
-    <div class="wo-scroll-hint">scroll</div>
+    <div class="lp-scroll">scroll</div>
   </section>
 
 
-  <!-- ② 制作できるワイン -->
-  <section class="wo-section wo-bg-deep" id="types">
-    <div class="wo-section-inner">
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       制作実績 — Soupir d'amour
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-sec" id="works">
+    <div class="lp-inner">
+      <span class="lp-label">— Production Works —</span>
+      <h2 class="lp-h2">制作実績</h2>
 
-      <div class="wo-section-header">
-        <span class="wo-section-num">— 01 —</span>
-        <h2 class="wo-section-title">制作できるワイン</h2>
-        <p class="wo-section-title-en">Types of Wine We Craft</p>
-        <div class="wo-divider"></div>
+      <div class="lp-card" style="margin-top:3.5rem;">
+
+        <!-- VISUAL: 同じ画像を流用 -->
+        <div class="lp-card-visual">
+          <img
+            src="images/soupir-hero.jpg"
+            alt="Soupir d'amour"
+          >
+          <div class="lp-card-visual-overlay"></div>
+        </div>
+
+        <!-- DETAIL -->
+        <div class="lp-card-body">
+          <div>
+            <p class="lp-card-name-fr">Soupir d'amour</p>
+            <p class="lp-card-name-ja">スピー・ダムール</p>
+          </div>
+
+          <div class="lp-meta">
+            <div class="lp-meta-row">
+              <span class="lp-meta-key">TYPE</span>
+              <span class="lp-meta-val">スパークリングワイン</span>
+            </div>
+            <div class="lp-meta-row">
+              <span class="lp-meta-key">ORIGIN</span>
+              <span class="lp-meta-val">Made in Japan</span>
+            </div>
+            <div class="lp-meta-row">
+              <span class="lp-meta-key">BLEND</span>
+              <span class="lp-meta-val">実生柚子 × シャルドネ</span>
+            </div>
+            <div class="lp-meta-row">
+              <span class="lp-meta-key">ABV</span>
+              <span class="lp-meta-val">7.5%  /  750ml</span>
+            </div>
+            <div class="lp-meta-row">
+              <span class="lp-meta-key">DESIGN</span>
+              <span class="lp-meta-val">ラベル・ブランディング・コンセプト一式</span>
+            </div>
+          </div>
+
+          <p class="lp-card-note">
+            「愛のため息」を意味するフランス語を冠したこのワインは、<br>
+            やさしい甘さと華やかな香りで特別な夜に寄り添う一本。<br>
+            ラベルには流れ星のように輝く女性のシルエットを描き、<br>
+            贈る喜びそのものをビジュアルで表現しました。
+          </p>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="wo-wine-grid">
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">01</div>
-          <h3>オリジナルラベルワイン</h3>
-          <span class="wo-wine-en">Custom Label Wine</span>
-          <p>既存の高品質ワインにオリジナルラベルを施す、最もスタンダードな制作。企業ノベルティ、ウェディング、記念品に。</p>
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       制作できるワイン
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-sec lp-bg-layer" id="types">
+    <div class="lp-inner">
+      <span class="lp-label">— Types of Wine —</span>
+      <h2 class="lp-h2">制作できるワイン</h2>
+
+      <div class="lp-types-grid">
+        <div class="lp-type">
+          <div class="lp-type-n">01</div>
+          <h3>オリジナルラベル</h3>
+          <span class="lp-type-en">Custom Label Wine</span>
+          <p>高品質なベースワインにオリジナルラベルを施す、最もスタンダードな制作。企業ノベルティ・記念品に。</p>
         </div>
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">02</div>
-          <h3>ブレンドオリジナルワイン</h3>
-          <span class="wo-wine-en">Blended Original Wine</span>
-          <p>ブドウ品種・産地・比率をカスタマイズしたブレンドワイン。風味・コンセプトから設計するこだわりの一本。</p>
+        <div class="lp-type">
+          <div class="lp-type-n">02</div>
+          <h3>ブレンドオリジナル</h3>
+          <span class="lp-type-en">Blended Original</span>
+          <p>品種・産地・比率をカスタマイズしたブレンドワイン。コンセプトから風味まで、こだわりの一本を設計。</p>
         </div>
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">03</div>
+        <div class="lp-type">
+          <div class="lp-type-n">03</div>
           <h3>プライベートラベル</h3>
-          <span class="wo-wine-en">Private Label</span>
-          <p>レストラン・ホテル・ブランド向けのハウスワイン制作。リピート発注に対応した安定供給体制を構築。</p>
+          <span class="lp-type-en">Private Label</span>
+          <p>レストラン・ホテル向けのハウスワイン制作。安定した品質と継続供給体制で長期運用をサポート。</p>
         </div>
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">04</div>
-          <h3>ギフト・記念ワイン</h3>
-          <span class="wo-wine-en">Gift & Commemorative</span>
-          <p>創業記念・周年・慶事などの特別な節目を刻む一本。メッセージ・写真入りラベルにも対応。</p>
-        </div>
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">05</div>
+        <div class="lp-type">
+          <div class="lp-type-n">04</div>
           <h3>スパークリング制作</h3>
-          <span class="wo-wine-en">Sparkling Wine</span>
-          <p>シャンパン製法やプロセッコスタイルのオリジナルスパークリング。パーティー・ブライダルに最適。</p>
+          <span class="lp-type-en">Sparkling Wine</span>
+          <p>泡ものならではの華やかさを演出。ブライダル・パーティー・記念の乾杯を彩るオリジナルスパークリング。</p>
         </div>
-        <div class="wo-wine-item">
-          <div class="wo-wine-num">06</div>
+        <div class="lp-type">
+          <div class="lp-type-n">05</div>
+          <h3>ギフト・記念ワイン</h3>
+          <span class="lp-type-en">Gift & Commemorative</span>
+          <p>創業記念・周年・慶事の節目に。写真・メッセージ入りラベルにも対応した、唯一無二の贈り物。</p>
+        </div>
+        <div class="lp-type">
+          <div class="lp-type-n">06</div>
           <h3>ノンアルコール対応</h3>
-          <span class="wo-wine-en">Non-Alcoholic</span>
-          <p>妊娠・健康・宗教的配慮など様々なニーズに応えるノンアルコールオリジナルラベル制作にも対応。</p>
+          <span class="lp-type-en">Non-Alcoholic</span>
+          <p>妊娠・健康・宗教的配慮など多様なニーズに対応。すべての人が楽しめるオリジナルラベル制作。</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ③ 制作実績 -->
-  <section class="wo-section" id="works">
-    <div class="wo-section-inner">
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       制作フロー
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-sec" id="flow">
+    <div class="lp-inner">
+      <span class="lp-label">— How We Create —</span>
+      <h2 class="lp-h2">制作の流れ</h2>
 
-      <div class="wo-section-header">
-        <span class="wo-section-num">— 02 —</span>
-        <h2 class="wo-section-title">制作実績</h2>
-        <p class="wo-section-title-en">Our Works</p>
-        <div class="wo-divider"></div>
-      </div>
-
-      <div class="wo-achievement">
-        <div class="wo-achievement-frame">
-
-          <!-- VISUAL PANEL -->
-          <div class="wo-achievement-visual">
-            <div class="wo-bottle-icon">
-              <!-- Minimalist bottle SVG -->
-              <svg class="bottle-svg" viewBox="0 0 80 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- Capsule -->
-                <rect x="28" y="0" width="24" height="18" rx="4" fill="#b8963e" opacity="0.7"/>
-                <!-- Neck -->
-                <rect x="30" y="16" width="20" height="34" fill="#c9a84c" opacity="0.5"/>
-                <!-- Shoulder curve -->
-                <path d="M20 50 Q20 70 16 80 L16 190 Q16 204 40 204 Q64 204 64 190 L64 80 Q60 70 60 50 Z" fill="#4a1515" opacity="0.85"/>
-                <!-- Shine -->
-                <path d="M28 80 Q26 120 26 160" stroke="rgba(255,255,255,0.12)" stroke-width="3" stroke-linecap="round"/>
-                <!-- Label area -->
-                <rect x="20" y="95" width="40" height="80" rx="2" fill="rgba(240,235,224,0.06)" stroke="rgba(184,150,62,0.3)" stroke-width="0.5"/>
-                <!-- Label text lines -->
-                <line x1="28" y1="113" x2="52" y2="113" stroke="rgba(184,150,62,0.4)" stroke-width="0.5"/>
-                <line x1="26" y1="125" x2="54" y2="125" stroke="rgba(184,150,62,0.2)" stroke-width="0.5"/>
-                <line x1="28" y1="137" x2="52" y2="137" stroke="rgba(184,150,62,0.2)" stroke-width="0.5"/>
-                <line x1="30" y1="149" x2="50" y2="149" stroke="rgba(184,150,62,0.15)" stroke-width="0.5"/>
-                <!-- Bottom -->
-                <ellipse cx="40" cy="200" rx="24" ry="6" fill="#3a1010" opacity="0.6"/>
-              </svg>
-
-              <p class="wo-wine-name-ja">スピー・ダムール</p>
-              <p class="wo-wine-name-fr">Spee d'Amour</p>
-            </div>
-          </div>
-
-          <!-- DETAIL PANEL -->
-          <div class="wo-achievement-detail">
-            <h3>スピー・ダムール</h3>
-
-            <div class="wo-achievement-meta">
-              <div class="wo-meta-row">
-                <span class="wo-meta-label">PRODUCT</span>
-                <span class="wo-meta-val">オリジナルラベル赤ワイン</span>
-              </div>
-              <div class="wo-meta-row">
-                <span class="wo-meta-label">CONCEPT</span>
-                <span class="wo-meta-val">「愛の小舟」をテーマに、<br>贈る喜びをひとつの瓶に込めた。</span>
-              </div>
-              <div class="wo-meta-row">
-                <span class="wo-meta-label">DESIGN</span>
-                <span class="wo-meta-val">ラベルデザイン・ブランディング一式</span>
-              </div>
-              <div class="wo-meta-row">
-                <span class="wo-meta-label">USE CASE</span>
-                <span class="wo-meta-val">ギフト・記念品・ブライダル向け</span>
-              </div>
-            </div>
-
-            <p class="wo-achievement-note">
-              「スピー」はバスク語で「船」を意味します。HASIBUNEの社名に込めた「橋を架ける」という理念と、愛を届ける舟のイメージを重ね合わせ、唯一無二のワインブランドとして誕生させました。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ④ 制作フロー -->
-  <section class="wo-section wo-bg-deep" id="flow">
-    <div class="wo-section-inner">
-
-      <div class="wo-section-header">
-        <span class="wo-section-num">— 03 —</span>
-        <h2 class="wo-section-title">制作フロー</h2>
-        <p class="wo-section-title-en">How We Create</p>
-        <div class="wo-divider"></div>
-      </div>
-
-      <div class="wo-flow">
-        <div class="wo-flow-item">
-          <div class="wo-flow-num">01</div>
-          <div class="wo-flow-content">
+      <div class="lp-flow">
+        <div class="lp-step">
+          <div class="lp-step-n">01</div>
+          <div class="lp-step-body">
             <h3>ヒアリング・コンセプト設計</h3>
-            <p>用途・ターゲット・世界観・ご予算をお伺いします。贈る相手やシーンに合わせて、ワインのコンセプトをご一緒に設計します。初回相談は無料です。</p>
+            <p>用途・世界観・ご予算を丁寧にお伺いします。贈る相手やブランドのストーリーをもとに、ワインのコンセプトを設計します。初回相談は無料です。</p>
           </div>
         </div>
-        <div class="wo-flow-item">
-          <div class="wo-flow-num">02</div>
-          <div class="wo-flow-content">
+        <div class="lp-step">
+          <div class="lp-step-n">02</div>
+          <div class="lp-step-body">
             <h3>ワイン選定・ブレンド提案</h3>
-            <p>コンセプトに合うワインの産地・品種・ヴィンテージを選定。ブレンドが必要な場合はサンプルをご確認いただけます。</p>
+            <p>コンセプトに合う産地・品種・ヴィンテージを選定。ブレンドが必要な場合はサンプルをご試飲いただけます。</p>
           </div>
         </div>
-        <div class="wo-flow-item">
-          <div class="wo-flow-num">03</div>
-          <div class="wo-flow-content">
+        <div class="lp-step">
+          <div class="lp-step-n">03</div>
+          <div class="lp-step-body">
             <h3>ラベル・パッケージデザイン</h3>
-            <p>HASIBUNEのデザインチームがオリジナルラベルを制作。文字・色・素材・仕上げまで細部にこだわったデザインをご提案します。</p>
+            <p>HASIBUNEのデザインチームが、世界観に合わせたオリジナルラベルを制作。箔押し・特殊印刷など上質な仕上げにも対応。</p>
           </div>
         </div>
-        <div class="wo-flow-item">
-          <div class="wo-flow-num">04</div>
-          <div class="wo-flow-content">
+        <div class="lp-step">
+          <div class="lp-step-n">04</div>
+          <div class="lp-step-body">
             <h3>サンプル確認・最終調整</h3>
-            <p>実物サンプルをご確認いただき、ラベル・中味ともに最終的なご承認をいただきます。細部の修正にも丁寧に対応します。</p>
+            <p>実物サンプルにてラベル・中身ともにご確認いただき、最終承認の後、細部の修正にも丁寧に対応します。</p>
           </div>
         </div>
-        <div class="wo-flow-item">
-          <div class="wo-flow-num">05</div>
-          <div class="wo-flow-content">
+        <div class="lp-step">
+          <div class="lp-step-n">05</div>
+          <div class="lp-step-body">
             <h3>製造・納品</h3>
-            <p>ご承認後、製造・瓶詰め・ラベル貼付を経て納品いたします。ギフトボックス・木箱など包材のご用意も可能です。</p>
+            <p>ご承認後、製造・瓶詰め・ラベル貼付を経て納品。ギフトボックス・木箱など包材のご手配も可能です。</p>
           </div>
         </div>
       </div>
@@ -856,64 +766,63 @@
   </section>
 
 
-  <!-- ⑤ 対象顧客 -->
-  <section class="wo-section" id="target">
-    <div class="wo-section-inner">
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       対象顧客
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-sec lp-bg-layer" id="target">
+    <div class="lp-inner">
+      <span class="lp-label">— For Whom —</span>
+      <h2 class="lp-h2">こんな方へ</h2>
 
-      <div class="wo-section-header">
-        <span class="wo-section-num">— 04 —</span>
-        <h2 class="wo-section-title">こんな方へ</h2>
-        <p class="wo-section-title-en">For Whom</p>
-        <div class="wo-divider"></div>
-      </div>
-
-      <div class="wo-target-grid">
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">🏢</div>
+      <div class="lp-for-grid">
+        <div class="lp-for-card">
+          <div class="lp-for-icon">🏢</div>
           <h3>企業・法人様</h3>
-          <p>周年記念・株主ギフト・取引先への贈答品として。ブランドロゴ入りラベルで企業イメージを高めます。</p>
+          <p>周年記念・株主ギフト・取引先への贈答品に。ブランドロゴ入りラベルで企業価値を高めます。</p>
         </div>
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">🥂</div>
+        <div class="lp-for-card">
+          <div class="lp-for-icon">🥂</div>
           <h3>レストラン・ホテル様</h3>
-          <p>施設の世界観を体現するハウスワインを制作。メニューの差別化と顧客体験の向上に貢献します。</p>
+          <p>施設の世界観を体現するハウスワインで差別化を。長期安定供給にも対応します。</p>
         </div>
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">💍</div>
+        <div class="lp-for-card">
+          <div class="lp-for-icon">💍</div>
           <h3>ブライダル・イベント</h3>
-          <p>結婚式・パーティーの乾杯ワインをオリジナルで。ゲストへの最高の記念品になります。</p>
+          <p>結婚式・パーティーの乾杯を、忘れられない記念品に。ゲストへの最高のサプライズを演出します。</p>
         </div>
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">🛍️</div>
+        <div class="lp-for-card">
+          <div class="lp-for-icon">🛍️</div>
           <h3>ショップ・ブランド様</h3>
-          <p>セレクトショップやブランドのオリジナル商品として。新しい収益源とブランド価値向上を同時に実現。</p>
+          <p>オリジナル商品ラインとして新たな収益源に。ブランドイメージの向上にも貢献します。</p>
         </div>
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">🎁</div>
+        <div class="lp-for-card">
+          <div class="lp-for-icon">🎁</div>
           <h3>個人・プライベート</h3>
-          <p>大切な人への誕生日・記念日ギフト。世界にひとつのワインで、言葉以上の想いを伝えます。</p>
+          <p>大切な人への誕生日・記念日に。世界にひとつのワインで、言葉以上の想いを届けます。</p>
         </div>
-        <div class="wo-target-card">
-          <div class="wo-target-card-icon">🍽️</div>
+        <div class="lp-for-card">
+          <div class="lp-for-icon">🍽️</div>
           <h3>飲食事業者様</h3>
-          <p>卸・業務用のオリジナルラベルワインを継続供給。コスト・品質・スケジュールを安定管理します。</p>
+          <p>業務用オリジナルラベルを定期供給。コスト・品質・スケジュールを安定管理します。</p>
         </div>
       </div>
     </div>
   </section>
 
 
-  <!-- ⑥ お問い合わせ CTA -->
-  <section class="wo-cta" id="contact">
-    <div class="wo-cta-inner">
-      <p class="wo-cta-quote">"Every bottle tells a story."</p>
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       CTA
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section class="lp-cta" id="contact">
+    <div class="lp-cta-inner">
+      <p class="lp-cta-quote">"Every bottle tells a story."</p>
       <h2>あなたの物語を、<br>ワインに宿らせましょう。</h2>
+      <div class="lp-cta-rule"></div>
       <p>
-        オリジナルワインのご相談は、<br>
-        まずお気軽にお問い合わせください。<br>
+        オリジナルワインのご相談は、まずお気軽にどうぞ。<br>
         初回相談・お見積もりは無料です。
       </p>
-      <a href="contact.html" class="wo-btn wo-btn-fill">無料相談を申し込む</a>
+      <a href="contact.html" class="lp-btn">制作相談はこちら</a>
     </div>
   </section>
 
@@ -948,5 +857,12 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script>
+    // ヘッダーをスクロール後に背景追加
+    const header = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+  </script>
 </body>
 </html>
