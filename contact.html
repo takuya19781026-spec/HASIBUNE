@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | 株式会社HASIBUNE</title>
+  <meta name="description" content="株式会社HASIBUNEへのお問い合わせ。コンサルタント・ワイン・デザイン・ウェブのご相談はこちら。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      HASIBUNE
+      <span>株式会社HASIBUNE</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="wine.html">ワイン</a></li>
+        <li><a href="design.html">デザイン</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="section-label">Contact</p>
+      <h1>お問い合わせ</h1>
+    </div>
+  </div>
+
+  <!-- CONTACT INFO + FORM -->
+  <section class="section">
+    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start;">
+
+      <!-- INFO -->
+      <div>
+        <p class="section-label">Contact Info</p>
+        <h2 class="section-title" style="font-size:1.4rem;">連絡先</h2>
+
+        <div style="display:flex;flex-direction:column;gap:1.6rem;margin-top:2rem;">
+          <div>
+            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">ADDRESS</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.8;">
+              〒771-0131<br>
+              徳島市川内町大松900-19
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">MOBILE</p>
+            <p style="font-size:0.9rem;color:#555;">
+              <a href="tel:08040382368">080-4038-2368</a>
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">EMAIL</p>
+            <p style="font-size:0.9rem;color:#555;">
+              <a href="mailto:takuya19781026@gmail.com">takuya19781026@gmail.com</a>
+            </p>
+          </div>
+          <div>
+            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">HOURS</p>
+            <p style="font-size:0.9rem;color:#555;line-height:1.8;">
+              平日 10:00 – 18:00<br>
+              ※土日祝は翌営業日に対応
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORM -->
+      <div>
+        <p class="section-label">Inquiry Form</p>
+        <h2 class="section-title" style="font-size:1.4rem;">お問い合わせフォーム</h2>
+        <p style="color:#666;font-size:0.9rem;margin-bottom:2rem;margin-top:0.5rem;">
+          <span class="required-mark">*</span> は必須項目です。
+        </p>
+
+        <form class="contact-form" action="#" method="post">
+          <div class="form-group">
+            <label for="name">お名前<span class="required-mark">*</span></label>
+            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+          </div>
+
+          <div class="form-group">
+            <label for="company">会社名・屋号</label>
+            <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+          </div>
+
+          <div class="form-group">
+            <label for="email">メールアドレス<span class="required-mark">*</span></label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="tel">電話番号</label>
+            <input type="tel" id="tel" name="tel" placeholder="000-0000-0000">
+          </div>
+
+          <div class="form-group">
+            <label for="category">お問い合わせ種別<span class="required-mark">*</span></label>
+            <select id="category" name="category" required>
+              <option value="" disabled selected>選択してください</option>
+              <option value="consulting">コンサルタント</option>
+              <option value="wine">ワイン販売</option>
+              <option value="design">デザイン</option>
+              <option value="web">ウェブデザイン</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">お問い合わせ内容<span class="required-mark">*</span></label>
+            <textarea id="message" name="message" placeholder="ご相談内容をご記入ください" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-fill" style="width:100%;text-align:center;cursor:pointer;font-family:var(--font-main);font-size:0.9rem;letter-spacing:0.15em;border:none;">
+            送信する
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">HASIBUNE</div>
+        <p>
+          〒771-0131<br>
+          徳島市川内町大松900-19<br>
+          Mobile: 080-4038-2368<br>
+          Email: takuya19781026@gmail.com
+        </p>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="wine.html">ワイン販売</a></li>
+          <li><a href="design.html">デザイン・ウェブデザイン</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 株式会社HASIBUNE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
