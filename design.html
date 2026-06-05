@@ -42,52 +42,71 @@
 
     /* ====== HERO ====== */
     .dh-hero {
+      position: relative;
       min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: stretch;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
       padding-top: 70px;
     }
 
+    .dh-hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    /* 左側テキストエリアだけ薄くかける、右は素材を活かす */
+    .dh-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(255,255,255,0.72) 0%,
+        rgba(255,255,255,0.45) 30%,
+        rgba(255,255,255,0.0) 65%
+      );
+    }
+
     .dh-hero-left {
+      position: relative;
+      z-index: 2;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8rem 5rem 8rem 6vw;
+      padding: 8rem 0 8rem 8vw;
+      max-width: 520px;
     }
 
     .dh-hero-eyebrow {
       display: block;
       font-family: var(--serif);
       font-style: italic;
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       letter-spacing: 0.45em;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
+      color: #777;
+      margin-bottom: 2rem;
       text-transform: uppercase;
     }
 
     .dh-hero h1 {
       font-family: var(--serif);
       font-weight: 300;
-      font-size: clamp(2.8rem, 5vw, 5rem);
-      letter-spacing: 0.04em;
-      line-height: 1.05;
+      font-size: clamp(4rem, 8vw, 8rem);
+      letter-spacing: 0.06em;
+      line-height: 1;
       color: var(--ink);
-      margin-bottom: 2.5rem;
-    }
-
-    .dh-hero h1 span {
-      display: block;
-      font-style: italic;
-      color: var(--navy);
+      margin-bottom: 2.4rem;
     }
 
     .dh-hero-rule {
-      width: 48px;
+      width: 32px;
       height: 1px;
       background: var(--ink);
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
     }
 
     .dh-hero-catch {
@@ -100,56 +119,6 @@
       max-width: 360px;
     }
 
-    .dh-hero-right {
-      background: var(--navy);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .dh-hero-right-inner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* Large decorative letter */
-    .dh-hero-deco {
-      font-family: var(--serif);
-      font-style: italic;
-      font-weight: 300;
-      font-size: clamp(12rem, 22vw, 22rem);
-      color: rgba(255,255,255,0.04);
-      user-select: none;
-      line-height: 1;
-    }
-
-    .dh-hero-caption {
-      position: absolute;
-      bottom: 3rem;
-      left: 3rem;
-      right: 3rem;
-    }
-
-    .dh-hero-caption p {
-      font-family: var(--sans);
-      font-weight: 200;
-      font-size: 0.72rem;
-      letter-spacing: 0.3em;
-      color: rgba(255,255,255,0.4);
-      text-transform: uppercase;
-    }
-
-    .dh-hero-caption h2 {
-      font-family: var(--nserif);
-      font-weight: 200;
-      font-size: clamp(1.1rem, 2vw, 1.5rem);
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.85);
-      margin-top: 0.6rem;
-      line-height: 1.6;
-    }
 
     /* ====== SECTION BASE ====== */
     .ds {
@@ -521,9 +490,9 @@
 
     /* ====== RESPONSIVE ====== */
     @media (max-width: 960px) {
-      .dh-hero { grid-template-columns: 1fr; min-height: auto; }
-      .dh-hero-right { min-height: 380px; }
-      .dh-hero-left { padding: 5rem 6vw 4rem; }
+      .dh-hero { min-height: 80vh; }
+      .dh-hero-left { padding: 5rem 6vw 4rem; max-width: 100%; }
+      .dh-hero-overlay { background: linear-gradient(to bottom, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0.0) 100%); }
       .dh-about { grid-template-columns: 1fr; }
       .dh-about-vis { min-height: 300px; }
       .dh-about-text { padding: 5rem 6vw; }
@@ -576,29 +545,22 @@
 
   <!-- ① HERO -->
   <section class="dh-hero">
+    <img
+      class="dh-hero-img"
+      src="images/design-hero.jpg"
+      alt="HASIBUNE Design &amp; Branding"
+    >
+    <div class="dh-hero-overlay"></div>
+
     <div class="dh-hero-left">
-      <span class="dh-hero-eyebrow">Design &amp; Branding — HASIBUNE</span>
-      <h1>
-        DESIGN<br>
-        <span>/ BRANDING</span>
-      </h1>
+      <span class="dh-hero-eyebrow">HASIBUNE — Design &amp; Branding</span>
+      <h1>DESIGN</h1>
       <div class="dh-hero-rule"></div>
       <p class="dh-hero-catch">
-        ブランドは、見た目ではなく<br>
+        ブランドは、<br>
+        見た目ではなく<br>
         記憶に残る体験。
       </p>
-    </div>
-    <div class="dh-hero-right">
-      <div class="dh-hero-right-inner">
-        <span class="dh-hero-deco">B</span>
-      </div>
-      <div class="dh-hero-caption">
-        <p>Brand Identity &amp; Visual Design</p>
-        <h2>
-          形のないものに、<br>
-          かたちを与える仕事。
-        </h2>
-      </div>
     </div>
   </section>
 
