@@ -9,6 +9,26 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    @media (max-width: 768px) {
+      .about-info-row {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem !important;
+        padding: 1.6rem 0 !important;
+      }
+      .about-info-row > span:first-child {
+        font-size: 0.7rem !important;
+        letter-spacing: 0.25em !important;
+      }
+      .about-info-row span,
+      .about-info-row a,
+      .about-info-row div span {
+        font-size: 1rem !important;
+        line-height: 1.9 !important;
+        letter-spacing: 0.04em !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -43,32 +63,32 @@
 
       <div style="border-top:1px solid #e0d8ce;">
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;">Company Name</span>
           <span style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:1rem;letter-spacing:0.1em;color:#1a1a1a;">株式会社HASIBUNE</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;">Representative</span>
           <span style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:1rem;letter-spacing:0.1em;color:#1a1a1a;">代表取締役　西 卓也</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:start;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:start;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;padding-top:0.2rem;">Address</span>
           <span style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.88rem;color:#555;line-height:2;letter-spacing:0.06em;">〒771-0131<br>徳島市川内町大松900-19</span>
         </div>
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;">Mobile</span>
           <a href="tel:08040382368" style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.88rem;color:#555;letter-spacing:0.08em;text-decoration:none;">080-4038-2368</a>
         </div>
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:baseline;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;">Email</span>
           <a href="mailto:info@hasibune.jp" style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.88rem;color:#555;letter-spacing:0.06em;text-decoration:none;">info@hasibune.jp</a>
         </div>
 
-        <div style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:start;gap:4rem;">
+        <div class="about-info-row" style="display:grid;grid-template-columns:220px 1fr;padding:2.2rem 0;border-bottom:1px solid #e0d8ce;align-items:start;gap:4rem;">
           <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;padding-top:0.2rem;">Business</span>
           <div style="display:flex;flex-direction:column;gap:0.6rem;">
             <span style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.88rem;color:#555;letter-spacing:0.06em;">コンサルタント業</span>
