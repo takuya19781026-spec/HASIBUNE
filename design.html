@@ -516,6 +516,22 @@
       .dh-svc-body { grid-column: 2; }
       .dh-flow-grid { grid-template-columns: 1fr 1fr; }
       .dh-cta { grid-template-columns: 1fr; gap: 3rem; padding: 6rem 6vw; }
+      .dh-split {
+        flex-direction: column;
+        height: auto;
+      }
+      .dh-split-left {
+        flex: none;
+        width: 100%;
+        order: 2;
+        padding: 3rem 6vw !important;
+      }
+      .dh-split-right {
+        flex: none;
+        width: 100%;
+        order: 1;
+        min-height: 280px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -532,6 +548,8 @@
       }
       .dh-svc-item { grid-template-columns: 1fr; }
       .dh-svc-n { display: none; }
+      .dh-svc-title { font-size: 1.1rem; line-height: 1.7; }
+      .dh-svc-body { font-size: 1rem; line-height: 1.9; letter-spacing: 0.02em; }
     }
   </style>
 </head>

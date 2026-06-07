@@ -57,6 +57,25 @@
       font-family: 'Noto Sans JP', sans-serif;
       font-weight: 300;
     }
+
+    @media (max-width: 768px) {
+      .wine-showcase {
+        grid-template-columns: 1fr !important;
+      }
+      .wine-showcase > div:first-child {
+        min-height: 240px !important;
+        order: -1;
+      }
+      .wine-showcase > div:last-child {
+        padding: 2.2rem 1.4rem !important;
+      }
+      .wine-showcase p,
+      .wine-showcase span {
+        font-size: 1rem !important;
+        line-height: 1.9 !important;
+        letter-spacing: 0.02em !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -138,7 +157,7 @@
       <p class="section-label" style="color:#b8963e;">— Original Wine Works —</p>
       <h2 class="section-title" style="color:#f0ebe0;">オリジナルワイン制作実績</h2>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(184,150,62,0.2);margin-top:3rem;">
+      <div class="wine-showcase" style="display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(184,150,62,0.2);margin-top:3rem;">
         <!-- 画像 -->
         <div style="position:relative;min-height:460px;overflow:hidden;">
           <img

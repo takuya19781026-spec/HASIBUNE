@@ -452,4 +452,14 @@ ul {
   .info-table th {
     width: 120px;
   }
+
+  .section {
+    padding: 4rem 1.25rem;
+  }
+
+  .card p,
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
 }
