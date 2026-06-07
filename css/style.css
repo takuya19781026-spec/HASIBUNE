@@ -462,4 +462,42 @@ ul {
     font-size: 1rem;
     line-height: 1.9;
   }
+
+  /* ===== HOME: 事業内容 ===== */
+  .home-svc-row {
+    grid-template-columns: 1fr !important;
+    gap: 0.6rem !important;
+    padding: 2rem 0 !important;
+  }
+
+  .home-svc-row > span {
+    display: none;
+  }
+
+  .home-svc-row h3 {
+    font-size: 1.1rem !important;
+  }
+
+  .home-svc-row p {
+    font-size: 1rem !important;
+    line-height: 1.9 !important;
+    letter-spacing: 0.03em !important;
+  }
+
+  /* ===== HOME: 会社概要スニペット ===== */
+  .home-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .home-about-grid p {
+    font-size: 1rem !important;
+    line-height: 1.9 !important;
+  }
+
+  .home-about-img {
+    order: -1;
+    height: 56vw !important;
+    max-height: 260px !important;
+  }
 }
