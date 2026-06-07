@@ -7,8 +7,109 @@
   <meta name="description" content="株式会社HASIBUNEへのお問い合わせ。コンサルタント・ワイン・デザイン・ウェブのご相談はこちら。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .contact-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 8rem;
+      align-items: start;
+    }
+    .c-info-label {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.58rem;
+      letter-spacing: 0.4em;
+      color: #b8963e;
+      margin: 0 0 0.4rem;
+    }
+    .c-info-val {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 2;
+      letter-spacing: 0.05em;
+    }
+    .c-info-val a { color: #555; text-decoration: none; }
+    .lux-form .form-row {
+      border-bottom: 1px solid #e0d8ce;
+      padding: 1.8rem 0;
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      align-items: center;
+      gap: 2rem;
+    }
+    .lux-form label {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      color: #b8963e;
+    }
+    .lux-form input,
+    .lux-form select,
+    .lux-form textarea {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #d0c8be;
+      padding: 0.5rem 0;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      letter-spacing: 0.06em;
+      outline: none;
+      transition: border-color 0.3s;
+      box-sizing: border-box;
+    }
+    .lux-form input:focus,
+    .lux-form select:focus,
+    .lux-form textarea:focus {
+      border-bottom-color: #b8963e;
+    }
+    .lux-form input::placeholder,
+    .lux-form textarea::placeholder {
+      color: #ccc;
+      font-weight: 300;
+    }
+    .lux-form textarea {
+      height: 120px;
+      resize: none;
+    }
+    .lux-form select {
+      appearance: none;
+      cursor: pointer;
+    }
+    .lux-form .req {
+      color: #b8963e;
+      margin-left: 0.2rem;
+      font-style: normal;
+    }
+    .lux-submit {
+      display: block;
+      width: 100%;
+      margin-top: 3.5rem;
+      padding: 1.1rem;
+      background: transparent;
+      border: 1px solid #2a2420;
+      color: #2a2420;
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.35em;
+      cursor: pointer;
+      transition: background 0.3s, color 0.3s;
+    }
+    .lux-submit:hover {
+      background: #2a2420;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -33,141 +134,102 @@
   </header>
 
 
-  <!-- CONTACT INFO + FORM -->
-  <section class="section">
-    <div class="section-inner" style="display:grid;grid-template-columns:1fr 1.8fr;gap:5rem;align-items:start;">
+  <section style="background:#faf8f5;padding:8rem 6vw;">
+    <div class="contact-wrap">
 
-      <!-- INFO -->
-      <div>
-        <p class="section-label">Contact Info</p>
-        <h2 class="section-title" style="font-size:1.4rem;">連絡先</h2>
+      <!-- 左：連絡先 -->
+      <div style="padding-top:0.5rem;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.45em;color:#b8963e;margin:0 0 1rem;">— Contact —</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:1.5rem;letter-spacing:0.15em;color:#1a1a1a;margin:0 0 3rem;line-height:1.8;">お問い合わせ</h2>
 
-        <div style="display:flex;flex-direction:column;gap:1.6rem;margin-top:2rem;">
+        <div style="display:flex;flex-direction:column;gap:2.2rem;border-top:1px solid #e0d8ce;padding-top:2.5rem;">
           <div>
-            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">ADDRESS</p>
-            <p style="font-size:0.9rem;color:#555;line-height:1.8;">
-              〒771-0131<br>
-              徳島市川内町大松900-19
-            </p>
+            <p class="c-info-label">Address</p>
+            <p class="c-info-val">〒771-0131<br>徳島市川内町大松900-19</p>
           </div>
           <div>
-            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">MOBILE</p>
-            <p style="font-size:0.9rem;color:#555;">
-              <a href="tel:08040382368">080-4038-2368</a>
-            </p>
+            <p class="c-info-label">Mobile</p>
+            <p class="c-info-val"><a href="tel:08040382368">080-4038-2368</a></p>
           </div>
           <div>
-            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">EMAIL</p>
-            <p style="font-size:0.9rem;color:#555;">
-              <a href="mailto:info@hasibune.jp">info@hasibune.jp</a>
-            </p>
+            <p class="c-info-label">Email</p>
+            <p class="c-info-val"><a href="mailto:info@hasibune.jp">info@hasibune.jp</a></p>
           </div>
           <div>
-            <p style="font-size:0.75rem;letter-spacing:0.2em;color:var(--color-accent);margin-bottom:0.3rem;">HOURS</p>
-            <p style="font-size:0.9rem;color:#555;line-height:1.8;">
-              平日 10:00 – 18:00<br>
-              ※土日祝は翌営業日に対応
-            </p>
+            <p class="c-info-label">Hours</p>
+            <p class="c-info-val">平日 10:00 – 18:00<br>※土日祝は翌営業日に対応</p>
           </div>
         </div>
       </div>
 
-      <!-- FORM -->
+      <!-- 右：フォーム -->
       <div>
-        <p class="section-label">Inquiry Form</p>
-        <h2 class="section-title" style="font-size:1.4rem;">お問い合わせフォーム</h2>
-        <p style="color:#666;font-size:0.9rem;margin-bottom:2rem;margin-top:0.5rem;">
-          <span class="required-mark">*</span> は必須項目です。
-        </p>
+        <form class="lux-form" action="#" method="post">
+          <div style="border-top:1px solid #e0d8ce;">
 
-        <form class="contact-form" action="#" method="post">
-          <div class="form-group">
-            <label for="name">お名前<span class="required-mark">*</span></label>
-            <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+            <div class="form-row">
+              <label for="name">Name<span class="req">*</span></label>
+              <input type="text" id="name" name="name" placeholder="山田 太郎" required>
+            </div>
+
+            <div class="form-row">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" placeholder="株式会社〇〇">
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email<span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="example@email.com" required>
+            </div>
+
+            <div class="form-row">
+              <label for="tel">Tel</label>
+              <input type="tel" id="tel" name="tel" placeholder="000-0000-0000">
+            </div>
+
+            <div class="form-row">
+              <label for="category">Subject<span class="req">*</span></label>
+              <select id="category" name="category" required>
+                <option value="" disabled selected>選択してください</option>
+                <option value="consulting">コンサルタント</option>
+                <option value="wine">オリジナルプロダクト</option>
+                <option value="design">デザイン</option>
+                <option value="web">ウェブデザイン</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <div class="form-row" style="align-items:start;padding-top:2.2rem;">
+              <label for="message" style="padding-top:0.5rem;">Message<span class="req">*</span></label>
+              <textarea id="message" name="message" placeholder="ご相談内容をご記入ください" required></textarea>
+            </div>
+
           </div>
 
-          <div class="form-group">
-            <label for="company">会社名・屋号</label>
-            <input type="text" id="company" name="company" placeholder="株式会社〇〇">
-          </div>
-
-          <div class="form-group">
-            <label for="email">メールアドレス<span class="required-mark">*</span></label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="tel">電話番号</label>
-            <input type="tel" id="tel" name="tel" placeholder="000-0000-0000">
-          </div>
-
-          <div class="form-group">
-            <label for="category">お問い合わせ種別<span class="required-mark">*</span></label>
-            <select id="category" name="category" required>
-              <option value="" disabled selected>選択してください</option>
-              <option value="consulting">コンサルタント</option>
-              <option value="wine">ワイン販売</option>
-              <option value="design">デザイン</option>
-              <option value="web">ウェブデザイン</option>
-              <option value="other">その他</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">お問い合わせ内容<span class="required-mark">*</span></label>
-            <textarea id="message" name="message" placeholder="ご相談内容をご記入ください" required></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-fill" style="width:100%;text-align:center;cursor:pointer;font-family:var(--font-main);font-size:0.9rem;letter-spacing:0.15em;border:none;">
-            送信する
-          </button>
+          <button type="submit" class="lux-submit">送信する</button>
         </form>
       </div>
+
     </div>
   </section>
 
-  <!-- CONTACT VISUAL SECTION -->
+
+  <!-- ビジュアルセクション -->
   <section style="overflow:hidden;">
-    <div style="display:grid;grid-template-columns:2fr 3fr;height:600px;">
-
-      <!-- 左：テキスト＋連絡先 -->
-      <div style="padding:7rem 5rem 7rem 6vw;display:flex;flex-direction:column;justify-content:center;background:#faf8f5;">
-        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.65rem;letter-spacing:0.4em;color:#b8963e;margin-bottom:1.5rem;">— Contact —</p>
-        <h2 style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(1.4rem,2.5vw,2rem);letter-spacing:0.12em;color:#1a1a1a;line-height:1.6;margin-bottom:1.5rem;">
-          お気軽に<br>ご相談ください。
+    <div style="display:grid;grid-template-columns:2fr 3fr;height:520px;">
+      <div style="padding:6rem 5rem 6rem 6vw;display:flex;flex-direction:column;justify-content:center;background:#fff;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.45em;color:#b8963e;margin:0 0 1.8rem;">— HASIBUNE —</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:clamp(1.2rem,2vw,1.7rem);letter-spacing:0.15em;color:#1a1a1a;line-height:1.9;margin:0 0 1.5rem;">
+          想いを、形に。<br>可能性を、未来に。
         </h2>
-        <div style="width:32px;height:1px;background:#b8963e;margin-bottom:2.5rem;"></div>
-        <div style="display:flex;flex-direction:column;gap:1.4rem;">
-          <div>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;margin-bottom:0.3rem;">ADDRESS</p>
-            <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.82rem;color:#555;line-height:1.9;">〒771-0131<br>徳島市川内町大松900-19</p>
-          </div>
-          <div>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;margin-bottom:0.3rem;">MOBILE</p>
-            <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.82rem;color:#555;"><a href="tel:08040382368" style="color:#555;text-decoration:none;">080-4038-2368</a></p>
-          </div>
-          <div>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;margin-bottom:0.3rem;">EMAIL</p>
-            <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.82rem;color:#555;"><a href="mailto:info@hasibune.jp" style="color:#555;text-decoration:none;">info@hasibune.jp</a></p>
-          </div>
-          <div>
-            <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.6rem;letter-spacing:0.35em;color:#b8963e;margin-bottom:0.3rem;">HOURS</p>
-            <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.82rem;color:#555;line-height:1.9;">平日 10:00 – 18:00<br>※土日祝は翌営業日に対応</p>
-          </div>
-        </div>
+        <div style="width:28px;height:1px;background:#b8963e;"></div>
       </div>
-
-      <!-- 右：画像 -->
       <div style="position:relative;overflow:hidden;">
-        <img
-          src="images/contact-bg.jpg"
-          alt="お問い合わせ"
-          style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;"
-        >
+        <img src="images/contact-bg.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;">
       </div>
-
     </div>
   </section>
+
 
   <footer class="site-footer">
     <div class="footer-inner">
