@@ -95,6 +95,30 @@ ul {
   color: #2a2420;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.shop-btn {
+  display: inline-block;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid #b8963e;
+  color: #2a2420;
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.shop-btn:hover {
+  background: #b8963e;
+  color: #fff;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -464,6 +488,20 @@ ul {
 
   .nav-toggle {
     display: flex;
+  }
+
+  .shop-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.04em;
+  }
+
+  .header-actions {
+    gap: 0.8rem;
+  }
+
+  .site-header {
+    padding: 0 1.25rem;
   }
 
   .footer-inner {

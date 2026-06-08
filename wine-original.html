@@ -50,6 +50,8 @@
     .site-header .logo span { color: rgba(255,255,255,0.55); }
     .site-header .nav-menu a { color: rgba(255,255,255,0.85); }
     .site-header .nav-toggle span { background: #fff; }
+    .site-header .shop-btn { color: rgba(255,255,255,0.9); border-color: rgba(184,150,62,0.55); }
+    .site-header .shop-btn:hover { background: rgba(184,150,62,0.18); color: #fff; }
 
     /* ============================================
        HERO — FULL SCREEN
@@ -558,20 +560,22 @@
       HASIBUNE
       <span>株式会社HASIBUNE</span>
     </a>
-    <button class="nav-toggle" aria-label="メニュー">
-      <span></span><span></span><span></span>
-    </button>
-    <nav>
+    <div class="header-actions">
+      <a href="https://shop.hasibune.jp/" class="shop-btn" target="_blank" rel="noopener">ONLINE SHOP</a>
+      <button class="nav-toggle" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
       <ul class="nav-menu">
         <li><a href="index.html">ホーム</a></li>
         <li><a href="about.html">会社概要</a></li>
         <li><a href="services.html">サービス</a></li>
         <li><a href="wine-original.html" class="active">スピー・ダムール</a></li>
         <li><a href="design.html">デザイン</a></li>
-        <li><a href="https://shop.hasibune.jp/" target="_blank" rel="noopener">オンラインストア</a></li>
         <li><a href="contact.html">お問い合わせ</a></li>
       </ul>
-    </nav>
+      </nav>
+    </div>
   </header>
 
 
