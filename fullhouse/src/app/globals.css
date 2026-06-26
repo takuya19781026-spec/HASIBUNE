@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --color-fh-black: #111111;
+  --color-fh-gold: #d4a017;
+  --color-fh-gold-light: #e0b94a;
+  --color-fh-white: #ffffff;
+  --color-fh-gray: #f8f8f8;
+}
+
+@theme inline {
+  --color-fh-black: var(--color-fh-black);
+  --color-fh-gold: var(--color-fh-gold);
+  --color-fh-gold-light: var(--color-fh-gold-light);
+  --color-fh-white: var(--color-fh-white);
+  --color-fh-gray: var(--color-fh-gray);
+  --font-sans: var(--font-noto-sans-jp);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-fh-white);
+  color: var(--color-fh-black);
+}
