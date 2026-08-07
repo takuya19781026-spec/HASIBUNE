@@ -265,62 +265,6 @@
       background: var(--off);
     }
 
-    .dh-gallery-grid {
-      margin-top: 4rem;
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: 80px;
-      gap: 12px;
-    }
-
-    /* Magazine-style asymmetric cells */
-    .dh-cell {
-      background: var(--white);
-      overflow: hidden;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .dh-cell-a { grid-column: span 5; grid-row: span 5; }
-    .dh-cell-b { grid-column: span 4; grid-row: span 3; }
-    .dh-cell-c { grid-column: span 3; grid-row: span 3; }
-    .dh-cell-d { grid-column: span 4; grid-row: span 2; background: var(--navy); }
-    .dh-cell-e { grid-column: span 3; grid-row: span 4; }
-    .dh-cell-f { grid-column: span 5; grid-row: span 4; }
-    .dh-cell-g { grid-column: span 4; grid-row: span 2; }
-
-    .dh-cell-placeholder {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .dh-cell-placeholder span {
-      font-family: var(--serif);
-      font-style: italic;
-      font-size: 0.62rem;
-      letter-spacing: 0.3em;
-      color: #ccc;
-      text-align: center;
-      padding: 0 1rem;
-    }
-
-    .dh-cell-placeholder .dh-ph-icon {
-      font-size: 1.4rem;
-      opacity: 0.3;
-    }
-
-    /* navy cell special text */
-    .dh-cell-d .dh-cell-placeholder span {
-      color: rgba(255,255,255,0.3);
-    }
-
     .dh-gallery-note {
       margin-top: 2rem;
       font-size: 0.72rem;
@@ -538,14 +482,6 @@
       .ds { padding: 5rem 5vw; }
       .dh-services { padding: 0; }
       .dh-flow-grid { grid-template-columns: 1fr; }
-      .dh-gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        grid-auto-rows: 140px;
-      }
-      .dh-cell-a,.dh-cell-b,.dh-cell-c,.dh-cell-d,
-      .dh-cell-e,.dh-cell-f,.dh-cell-g {
-        grid-column: span 1; grid-row: span 1;
-      }
       .dh-svc-item { grid-template-columns: 1fr; }
       .dh-svc-n { display: none; }
       .dh-svc-title { font-size: 1.1rem; line-height: 1.7; }
@@ -646,50 +582,24 @@
       <h2 class="ds-h2">制作実績</h2>
     </div>
 
-    <div class="dh-gallery-grid">
-      <div class="dh-cell dh-cell-a">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Logo / Brand Identity</span>
-        </div>
+    <div style="margin-top:4rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1px;background:#e8e4dd;">
+
+      <!-- Verde arc -->
+      <div style="background:#fff;padding:3rem 2.5rem;display:flex;flex-direction:column;gap:1.2rem;">
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.4em;color:#b8963e;">Web Design</span>
+        <h3 style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:1.05rem;letter-spacing:0.12em;color:#1a1a1a;margin:0;line-height:1.7;">株式会社Verde arc</h3>
+        <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.78rem;color:#999;letter-spacing:0.05em;margin:0;">WEBサイト制作</p>
       </div>
-      <div class="dh-cell dh-cell-b">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Label Design</span>
-        </div>
+
+      <!-- 興進商事 -->
+      <div style="background:#fff;padding:3rem 2.5rem;display:flex;flex-direction:column;gap:1.2rem;">
+        <span style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.4em;color:#b8963e;">Web Design</span>
+        <h3 style="font-family:'Noto Serif JP',serif;font-weight:300;font-size:1.05rem;letter-spacing:0.12em;color:#1a1a1a;margin:0;line-height:1.7;">株式会社興進商事</h3>
+        <p style="font-family:'Noto Sans JP',sans-serif;font-weight:300;font-size:0.78rem;color:#999;letter-spacing:0.05em;margin:0;">WEBサイト制作</p>
       </div>
-      <div class="dh-cell dh-cell-c">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Business Card</span>
-        </div>
-      </div>
-      <div class="dh-cell dh-cell-d">
-        <div class="dh-cell-placeholder">
-          <span>Web Design</span>
-        </div>
-      </div>
-      <div class="dh-cell dh-cell-e">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Packaging</span>
-        </div>
-      </div>
-      <div class="dh-cell dh-cell-f">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Brand Concept</span>
-        </div>
-      </div>
-      <div class="dh-cell dh-cell-g">
-        <div class="dh-cell-placeholder">
-          <span class="dh-ph-icon">◻</span>
-          <span>Print Design</span>
-        </div>
-      </div>
+
     </div>
-    <p class="dh-gallery-note">— 実績画像は順次掲載予定です —</p>
+    <p class="dh-gallery-note">— 実績は順次掲載予定です —</p>
   </section>
 
 
