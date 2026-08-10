@@ -551,36 +551,38 @@
     /* ============================================
        BRAND POSTER GALLERY
     ============================================ */
-    .lp-poster-main {
-      max-width: 520px;
-      margin: 4.5rem auto 0;
+    .lp-embed {
+      margin-top: 4.5rem;
+      border: 1px solid rgba(184,150,62,0.18);
+      background: #0a0806;
+      overflow: hidden;
     }
-    .lp-poster-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      max-width: 1040px;
-      margin: 3rem auto 0;
-    }
-    .lp-poster {
+    .lp-embed iframe {
       display: block;
       width: 100%;
-      height: auto;
-      border: 1px solid rgba(184,150,62,0.18);
+      height: 82vh;
+      min-height: 640px;
+      border: 0;
     }
-    .lp-poster-cap {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-style: italic;
-      font-size: 0.62rem;
-      letter-spacing: 0.35em;
-      color: rgba(184,150,62,0.6);
-      margin-top: 1.2rem;
+    .lp-embed-note {
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: rgba(240,235,224,0.4);
+      text-align: center;
+      margin-top: 1.6rem;
     }
-    @media (max-width: 900px) {
-      .lp-poster-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-        max-width: 480px;
+    .lp-embed-note a {
+      color: rgba(184,150,62,0.8);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(184,150,62,0.4);
+      padding-bottom: 0.1rem;
+    }
+    @media (max-width: 600px) {
+      .lp-embed iframe {
+        height: 70vh;
+        min-height: 480px;
       }
     }
 
@@ -850,29 +852,28 @@
 
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       BRAND POSTER
+       BRAND SITE
   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
   <section style="background:#080604;padding:10rem 6vw;position:relative;overflow:hidden;">
     <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:64px;background:linear-gradient(to bottom,rgba(184,150,62,0.4),transparent);"></div>
 
-    <div style="max-width:1000px;margin:0 auto;position:relative;z-index:1;text-align:center;">
-      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.5em;color:#b8963e;margin:0 0 1.2rem;">— Brand Poster —</p>
-      <h2 style="font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:0.2em;color:#f0ebe0;margin:0;line-height:1.8;">ブランドポスター</h2>
-
-      <div class="lp-poster-main">
-        <img class="lp-poster" src="images/soupir-poster-night.jpg" alt="Soupir d'amour ブランドポスター — 泡の数だけ、あなたに恋をする。">
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:1;">
+      <div style="text-align:center;">
+        <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.5em;color:#b8963e;margin:0 0 1.2rem;">— Brand Site —</p>
+        <h2 style="font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:0.2em;color:#f0ebe0;margin:0;line-height:1.8;">Soupir d'amour</h2>
       </div>
 
-      <div class="lp-poster-grid">
-        <div>
-          <img class="lp-poster" src="images/soupir-why-ja.jpg" alt="Why Soupir d'amour — ブランドコンセプト（日本語）">
-          <p class="lp-poster-cap">Japanese</p>
-        </div>
-        <div>
-          <img class="lp-poster" src="images/soupir-why-en.jpg" alt="Why Soupir d'amour — ブランドコンセプト（英語）">
-          <p class="lp-poster-cap">English</p>
-        </div>
+      <div class="lp-embed">
+        <iframe
+          src="https://soupir-damour.vercel.app/"
+          title="Soupir d'amour ブランドサイト"
+          loading="lazy"
+        ></iframe>
       </div>
+
+      <p class="lp-embed-note">
+        表示されない場合は <a href="https://soupir-damour.vercel.app/" target="_blank" rel="noopener">こちらから</a> ご覧ください
+      </p>
     </div>
   </section>
 
