@@ -551,12 +551,16 @@
     /* ============================================
        BRAND POSTER GALLERY
     ============================================ */
+    .lp-poster-main {
+      max-width: 520px;
+      margin: 4.5rem auto 0;
+    }
     .lp-poster-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
-      max-width: 1000px;
-      margin: 4.5rem auto 0;
+      max-width: 1040px;
+      margin: 3rem auto 0;
     }
     .lp-poster {
       display: block;
@@ -564,10 +568,18 @@
       height: auto;
       border: 1px solid rgba(184,150,62,0.18);
     }
+    .lp-poster-cap {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.35em;
+      color: rgba(184,150,62,0.6);
+      margin-top: 1.2rem;
+    }
     @media (max-width: 900px) {
       .lp-poster-grid {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 3rem;
         max-width: 480px;
       }
     }
@@ -847,9 +859,19 @@
       <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.5em;color:#b8963e;margin:0 0 1.2rem;">— Brand Poster —</p>
       <h2 style="font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:0.2em;color:#f0ebe0;margin:0;line-height:1.8;">ブランドポスター</h2>
 
-      <div class="lp-poster-grid">
+      <div class="lp-poster-main">
         <img class="lp-poster" src="images/soupir-poster-night.jpg" alt="Soupir d'amour ブランドポスター — 泡の数だけ、あなたに恋をする。">
-        <img class="lp-poster" src="images/soupir-why.jpg" alt="Why Soupir d'amour — ブランドコンセプト">
+      </div>
+
+      <div class="lp-poster-grid">
+        <div>
+          <img class="lp-poster" src="images/soupir-why-ja.jpg" alt="Why Soupir d'amour — ブランドコンセプト（日本語）">
+          <p class="lp-poster-cap">Japanese</p>
+        </div>
+        <div>
+          <img class="lp-poster" src="images/soupir-why-en.jpg" alt="Why Soupir d'amour — ブランドコンセプト（英語）">
+          <p class="lp-poster-cap">English</p>
+        </div>
       </div>
     </div>
   </section>
