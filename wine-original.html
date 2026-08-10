@@ -548,6 +548,30 @@
       .lp-sec { padding: 5rem 1.5rem; }
     }
 
+    /* ============================================
+       BRAND POSTER GALLERY
+    ============================================ */
+    .lp-poster-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      max-width: 1000px;
+      margin: 4.5rem auto 0;
+    }
+    .lp-poster {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid rgba(184,150,62,0.18);
+    }
+    @media (max-width: 900px) {
+      .lp-poster-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 480px;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -811,6 +835,24 @@
   </section>
 
 
+
+
+  <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       BRAND POSTER
+  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+  <section style="background:#080604;padding:10rem 6vw;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:64px;background:linear-gradient(to bottom,rgba(184,150,62,0.4),transparent);"></div>
+
+    <div style="max-width:1000px;margin:0 auto;position:relative;z-index:1;text-align:center;">
+      <p style="font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-size:0.62rem;letter-spacing:0.5em;color:#b8963e;margin:0 0 1.2rem;">— Brand Poster —</p>
+      <h2 style="font-family:'Noto Serif JP',serif;font-weight:200;font-size:clamp(1.4rem,2.2vw,1.9rem);letter-spacing:0.2em;color:#f0ebe0;margin:0;line-height:1.8;">ブランドポスター</h2>
+
+      <div class="lp-poster-grid">
+        <img class="lp-poster" src="images/soupir-poster-night.jpg" alt="Soupir d'amour ブランドポスター — 泡の数だけ、あなたに恋をする。">
+        <img class="lp-poster" src="images/soupir-why.jpg" alt="Why Soupir d'amour — ブランドコンセプト">
+      </div>
+    </div>
+  </section>
 
 
   <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
