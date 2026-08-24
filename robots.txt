@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hasibune.jp/sitemap.xml
+Sitemap: https://www.hasibune.jp/sitemap.xml

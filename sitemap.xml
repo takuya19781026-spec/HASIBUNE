@@ -2,50 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url>
-    <loc>https://hasibune.jp/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://hasibune.jp/about.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/design.html</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.hasibune.jp/services.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hasibune.jp/services.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/about.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://hasibune.jp/wine-original.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/wine-original.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 
   <url>
-    <loc>https://hasibune.jp/design.html</loc>
-    <lastmod>2026-08-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://hasibune.jp/wine.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/wine.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://hasibune.jp/contact.html</loc>
-    <lastmod>2026-08-07</lastmod>
+    <loc>https://www.hasibune.jp/contact.html</loc>
+    <lastmod>2026-08-24</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
