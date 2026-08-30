@@ -398,6 +398,30 @@ ul {
   line-height: 1.9;
 }
 
+.footer-sns {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.6rem;
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  color: #9a8878;
+  text-decoration: none;
+  transition: color 0.25s;
+}
+
+.footer-sns:hover {
+  color: #d4b872;
+}
+
+.footer-sns svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+}
+
 .footer-nav ul {
   display: flex;
   flex-direction: column;
