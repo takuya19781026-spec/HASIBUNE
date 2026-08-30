@@ -417,9 +417,15 @@ ul {
 }
 
 .footer-sns svg {
-  width: 17px;
-  height: 17px;
+  width: 21px;
+  height: 21px;
   flex-shrink: 0;
+  color: #d4b872;
+  transition: color 0.25s;
+}
+
+.footer-sns:hover svg {
+  color: #e6cf95;
 }
 
 .footer-nav ul {
