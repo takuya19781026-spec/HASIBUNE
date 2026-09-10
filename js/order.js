@@ -10,13 +10,13 @@
 
 var PRODUCT = {
   name:  "Soupir d'amour（スピー・ダムール）スパークリングワイン 750ml",
-  price: 3300,   // 税込単価（円）
+  price: 18000,  // 税込単価（円）
   maxQty: 12
 };
 
 var SHIPPING = {
-  fee: 990,             // 税込送料（円・クール便 全国一律）
-  freeOver: 11000       // この金額（税込）以上で送料無料
+  fee: 990,             // ★未確定：税込送料（円）。実際の送料に書き換えてください。
+  freeOver: null        // 送料無料のしきい値（税込）。無料設定がない場合は null のまま。
 };
 
 // 注文データの受信先（FormSubmit）
@@ -51,7 +51,7 @@ function saveOrder(patch) {
 function calcTotals(qty) {
   var n = Math.max(1, Math.min(PRODUCT.maxQty, parseInt(qty, 10) || 1));
   var subtotal = PRODUCT.price * n;
-  var shipping = subtotal >= SHIPPING.freeOver ? 0 : SHIPPING.fee;
+  var shipping = (SHIPPING.freeOver !== null && subtotal >= SHIPPING.freeOver) ? 0 : SHIPPING.fee;
   return {
     qty: n,
     unit: PRODUCT.price,

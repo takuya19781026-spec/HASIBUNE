@@ -102,7 +102,7 @@
         <dt>お支払い方法</dt>
         <dd>銀行振込（前払い）<br>ご注文後、お振込先を記載したご請求書をメールでお送りいたします。</dd>
         <dt>送料</dt>
-        <dd>全国一律 990円（クール便・税込）<br>税込11,000円以上のご購入で送料無料</dd>
+        <dd>全国一律 990円（クール便・税込）</dd>
         <dt>発送時期</dt>
         <dd>ご入金確認後、3営業日以内に発送いたします。</dd>
         <dt>返品条件</dt>
@@ -173,7 +173,7 @@
 
       document.getElementById('unitPrice').textContent = yen(PRODUCT.price);
       document.getElementById('shipNote').textContent =
-        '送料 ' + yen(SHIPPING.fee) + '（税込・クール便）／税込' + yen(SHIPPING.freeOver) + '以上で送料無料';
+        '送料 ' + yen(SHIPPING.fee) + '（税込・クール便）';
 
       function refresh() {
         var t = calcTotals(sel.value);
