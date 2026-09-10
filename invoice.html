@@ -117,7 +117,7 @@
 
       <p class="ec-note">
         ※ 上記金額には消費税が含まれています。<br>
-        ※ お振込期限：<span id="dueDate">－</span>
+        ※ お振込期限：ご注文日から7日以内（<span id="dueDate">－</span>まで）
       </p>
 
       <p class="age-notice age-notice--light" style="margin-top:2rem;">
@@ -194,7 +194,9 @@
       }
       var t = o.totals || calcTotals(o.qty);
       var now = new Date();
-      var due = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+      // お振込期限＝ご注文日から7日以内
+      var orderDate = o.orderDateISO ? new Date(o.orderDateISO) : now;
+      var due = new Date(orderDate.getTime() + 7 * 24 * 60 * 60 * 1000);
       var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
 
       set('orderNo', o.orderNo);

@@ -94,9 +94,11 @@
         <dt>お支払い方法</dt>
         <dd>
           <strong>銀行振込（前払い）</strong><br>
-          ご注文後、お振込先を記載したご請求書をメールでお送りいたします。<br>
-          ご請求書の到着から7日以内にお振込みをお願いいたします。<br>
-          振込手数料はお客様のご負担となります。
+          お振込期限：<strong>ご注文日から7日以内</strong><br>
+          振込手数料はお客様のご負担となります。<br>
+          <br>
+          四国銀行　徳島営業部　普通　5162623<br>
+          口座名義：株式会社HASIBUNE
         </dd>
 
         <dt>発送時期</dt>
@@ -224,7 +226,7 @@
       var shipText = t.shipping === 0 ? '無料' : yen(t.shipping);
       var birthText = formatDate(new Date(o.birthday)) + '（' + o.age + '歳）';
 
-      saveOrder({ orderNo: orderNo, orderedAt: orderedAt, totals: t });
+      saveOrder({ orderNo: orderNo, orderedAt: orderedAt, orderDateISO: now.toISOString(), totals: t });
 
       var set = function (id, v) { document.getElementById(id).textContent = v; };
       set('itemName', PRODUCT.name);
