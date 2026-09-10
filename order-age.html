@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年齢確認｜株式会社HASIBUNE</title>
+  <meta name="description" content="HASIBUNEオンラインショップの年齢確認画面です。20歳未満の者に対しては酒類を販売しません。">
+  <link rel="canonical" href="https://www.hasibune.jp/order-age.html">
+  <meta name="robots" content="noindex">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社HASIBUNE">
+  <meta property="og:title" content="年齢確認｜株式会社HASIBUNE">
+  <meta property="og:url" content="https://www.hasibune.jp/order-age.html">
+  <meta property="og:locale" content="ja_JP">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ec-page">
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      HASIBUNE
+      <span>株式会社HASIBUNE</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="wine-original.html">スピー・ダムール</a></li>
+        <li><a href="design.html">デザイン</a></li>
+        <li><a href="https://shop.hasibune.jp/" target="_blank" rel="noopener">オンラインストア</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ec-main">
+    <p class="ec-screen-label">Online Shop</p>
+    <h1 class="ec-title">年齢確認</h1>
+
+    <div class="ec-flow">
+      <span>1. 商品ページ</span>
+      <span>2. 購入者情報入力</span>
+      <span class="current">3. 年齢確認</span>
+      <span>4. 注文内容の確認</span>
+      <span>5. 注文完了</span>
+    </div>
+
+    <div class="ec-card">
+      <h2 class="ec-card-title">ご入力いただいた生年月日</h2>
+
+      <dl class="ec-dl">
+        <dt>生年月日</dt>
+        <dd id="bdText">－</dd>
+        <dt>年齢</dt>
+        <dd><span id="ageText" class="ec-age-big">－</span></dd>
+      </dl>
+
+      <p class="age-notice age-notice--light" style="margin-top:1.8rem;">
+        20歳未満の者の飲酒は法律で禁止されています。<br>
+        20歳未満の者に対しては酒類を販売しません。
+      </p>
+
+      <!-- 20歳以上の場合 -->
+      <div id="adultBlock" hidden>
+        <label class="ec-consent" for="agree">
+          <input type="checkbox" id="agree">
+          <span>上記の生年月日に相違なく、私は<strong>20歳以上</strong>です。</span>
+        </label>
+
+        <p class="ec-error" id="err" hidden></p>
+
+        <div class="ec-buttons">
+          <button type="button" class="ec-btn" id="next">注文内容の確認へ進む</button>
+          <a class="ec-btn ec-btn--ghost" href="order-input.html">入力内容を修正する</a>
+        </div>
+      </div>
+
+      <!-- 20歳未満の場合 -->
+      <div id="minorBlock" hidden>
+        <div class="ec-blocked">
+          <p class="ec-blocked-title">ご注文を承ることができません</p>
+          <p>
+            20歳未満の方への酒類の販売は法律で禁止されており、当店ではお受けしておりません。<br>
+            ご入力に誤りがある場合は、生年月日をご修正ください。
+          </p>
+        </div>
+        <div class="ec-buttons">
+          <a class="ec-btn ec-btn--ghost" href="order-input.html">生年月日を修正する</a>
+          <a class="ec-btn ec-btn--ghost" href="index.html">トップページへ</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">HASIBUNE</div>
+        <p>
+          〒771-0131<br>
+          徳島市川内町大松900-19<br>
+          Mobile: 080-4038-2368<br>
+          Email: info@hasibune.jp<br>
+          <br>
+          〒141-0021<br>
+          東京都品川区上大崎2丁目13-28<br>
+          ソフィア白金301
+        </p>
+        <a href="https://www.instagram.com/hasibune_official/" target="_blank" rel="noopener" class="footer-sns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="design.html">デザイン・ウェブデザイン</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-age-notice">
+      <p class="age-notice age-notice--dark">
+        20歳未満の者の飲酒は法律で禁止されています。<br>
+        20歳未満の者に対しては酒類を販売しません。
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 株式会社HASIBUNE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/order.js"></script>
+  <script>
+    (function () {
+      var o = requireStep(['qty','name','birthday'], 'order-input.html');
+      if (!o) return;
+
+      var b = new Date(o.birthday);
+      var age = calcAge(o.birthday);
+      document.getElementById('bdText').textContent = formatDate(b);
+      document.getElementById('ageText').textContent = age + '歳';
+
+      if (age >= 20) {
+        document.getElementById('adultBlock').hidden = false;
+        var agree = document.getElementById('agree');
+        var err = document.getElementById('err');
+        document.getElementById('next').addEventListener('click', function () {
+          if (!agree.checked) {
+            err.textContent = '20歳以上であることをご確認のうえ、チェックを入れてください。';
+            err.hidden = false; return;
+          }
+          err.hidden = true;
+          saveOrder({ ageVerified: true, age: age });
+          location.href = 'order-confirm.html';
+        });
+      } else {
+        document.getElementById('minorBlock').hidden = false;
+        saveOrder({ ageVerified: false });
+      }
+    })();
+  </script>
+</body>
+</html>

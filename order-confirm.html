@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ご注文内容の確認｜株式会社HASIBUNE オンラインストア</title>
-  <meta name="description" content="株式会社HASIBUNE オンラインストアの注文確認画面です。20歳未満の者に対しては酒類を販売しません。">
+  <title>ご注文内容の確認｜株式会社HASIBUNE</title>
+  <meta name="description" content="HASIBUNEオンラインショップの注文確認画面です。20歳未満の者に対しては酒類を販売しません。">
   <link rel="canonical" href="https://www.hasibune.jp/order-confirm.html">
   <meta name="robots" content="noindex">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="株式会社HASIBUNE">
-  <meta property="og:title" content="ご注文内容の確認｜株式会社HASIBUNE オンラインストア">
+  <meta property="og:title" content="ご注文内容の確認｜株式会社HASIBUNE">
   <meta property="og:url" content="https://www.hasibune.jp/order-confirm.html">
   <meta property="og:locale" content="ja_JP">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="ec-page">
@@ -43,17 +42,17 @@
   </header>
 
   <main class="ec-main">
-    <p class="ec-screen-label">Online Store</p>
+    <p class="ec-screen-label">Online Shop</p>
     <h1 class="ec-title">ご注文内容確認</h1>
 
     <div class="ec-flow">
-      <span>1. 商品を選ぶ</span>
-      <span>2. 購入者情報の入力</span>
-      <span class="current">3. 注文内容の確認</span>
-      <span>4. 注文完了</span>
+      <span>1. 商品ページ</span>
+      <span>2. 購入者情報入力</span>
+      <span>3. 年齢確認</span>
+      <span class="current">4. 注文内容の確認</span>
+      <span>5. 注文完了</span>
     </div>
 
-    <!-- 商品と金額 -->
     <div class="ec-card">
       <h2 class="ec-card-title">ご注文商品</h2>
       <div class="ec-order-grid">
@@ -61,104 +60,101 @@
           <img src="images/soupir-hero.jpg" alt="Soupir d'amour（スピー・ダムール）スパークリングワイン 750ml">
         </div>
         <div>
-          <p class="ec-item-name">
-            品名：Soupir d'amour（スピー・ダムール）<br>
-            スパークリングワイン 750ml
-          </p>
+          <p class="ec-item-name" id="itemName">－</p>
           <table class="ec-price-table">
             <tbody>
-              <tr>
-                <th scope="row">単価（税込）</th>
-                <td>3,300円</td>
-              </tr>
-              <tr>
-                <th scope="row">数量</th>
-                <td>1本</td>
-              </tr>
-              <tr>
-                <th scope="row">小計（税込）</th>
-                <td>3,300円</td>
-              </tr>
-              <tr>
-                <th scope="row">送料（税込）</th>
-                <td>990円</td>
-              </tr>
-              <tr class="ec-total">
-                <th scope="row">合計（税込）</th>
-                <td>4,290円</td>
-              </tr>
+              <tr><th scope="row">単価（税込）</th><td id="pUnit">－</td></tr>
+              <tr><th scope="row">数量</th><td id="pQty">－</td></tr>
+              <tr><th scope="row">小計（税込）</th><td id="pSub">－</td></tr>
+              <tr><th scope="row">送料（税込）</th><td id="pShip">－</td></tr>
+              <tr class="ec-total"><th scope="row">合計（税込）</th><td id="pTotal">－</td></tr>
             </tbody>
           </table>
         </div>
       </div>
     </div>
 
-    <!-- 注文者情報 -->
     <div class="ec-card">
-      <h2 class="ec-card-title">注文者情報</h2>
+      <h2 class="ec-card-title">ご購入者情報</h2>
       <dl class="ec-dl">
-        <dt>氏名</dt>
-        <dd>徳島 花子 様</dd>
-
-        <dt>生年月日（年齢）</dt>
-        <dd>1990年4月1日（35歳）</dd>
-
-        <dt>住所</dt>
-        <dd>〒771-0131<br>徳島県徳島市川内町大松900-19</dd>
-
-        <dt>電話番号</dt>
-        <dd>080-0000-0000</dd>
-
-        <dt>メールアドレス</dt>
-        <dd>example@hasibune.jp</dd>
-
-        <dt>送付先</dt>
-        <dd>上記住所と同じ</dd>
+        <dt>氏名</dt><dd id="bName">－</dd>
+        <dt>郵便番号</dt><dd id="bZip">－</dd>
+        <dt>住所</dt><dd id="bAddr">－</dd>
+        <dt>電話番号</dt><dd id="bTel">－</dd>
+        <dt>メールアドレス</dt><dd id="bMail">－</dd>
+        <dt>生年月日（年齢）</dt><dd id="bBirth">－</dd>
+        <dt>お届け先</dt><dd>上記住所と同じ</dd>
+        <dt>備考</dt><dd id="bNote">－</dd>
       </dl>
     </div>
 
-    <!-- 支払・引渡し・解除 -->
     <div class="ec-card">
-      <h2 class="ec-card-title">お支払い・お届け・契約の解除について</h2>
+      <h2 class="ec-card-title">お支払い・発送・返品について</h2>
       <dl class="ec-dl">
-        <dt>代金支払方法</dt>
+        <dt>お支払い方法</dt>
         <dd>
-          銀行振込<br>
-          ご注文日から7日以内にお振込みをお願いいたします。<br>
+          <strong>銀行振込（前払い）</strong><br>
+          ご注文後、お振込先を記載したご請求書をメールでお送りいたします。<br>
+          ご請求書の到着から7日以内にお振込みをお願いいたします。<br>
           振込手数料はお客様のご負担となります。
         </dd>
 
-        <dt>商品の引渡し時期</dt>
-        <dd>
-          代金入金確認後、3営業日以内にヤマト運輸クール便にて商品を発送いたします。<br>
-          日時指定をご希望の場合は備考欄にご記入ください。
-        </dd>
+        <dt>発送時期</dt>
+        <dd>ご入金の確認後、3営業日以内にクール便にて発送いたします。</dd>
 
-        <dt>契約の解除に関する事項</dt>
+        <dt>返品条件</dt>
         <dd>
-          商品が届いてから8日以内であれば、返品（全額返金）を承ります。<br>
-          返品の際の返送料については、原則としてお客様のご負担となりますが、不良品の場合には返送料も当社負担で返品又は交換の対応をいたします。<br>
-          返品については、電話でのご連絡をお願いいたします。
-        </dd>
-
-        <dt>返品手続用の連絡窓口</dt>
-        <dd>
-          株式会社HASIBUNE　オンラインストア担当<br>
-          TEL：080-4038-2368（受付時間 平日 10:00〜17:00）<br>
-          Email：info@hasibune.jp
+          商品到着後8日以内に限り、返品を承ります。<br>
+          商品に欠陥がある場合は、返送料も当方が負担し、返品又は交換の対応をいたします。<br>
+          お客様のご都合による返品の場合、返送料はお客様のご負担となります。<br>
+          開栓済みの商品、お客様の管理下で破損・変質した商品の返品はお受けできません。<br>
+          返品のご連絡先：TEL 080-4038-2368 ／ Email info@hasibune.jp
         </dd>
       </dl>
-    </div>
-
-    <div class="ec-buttons">
-      <button type="button" class="ec-btn">注文内容を確定する</button>
-      <a class="ec-btn ec-btn--ghost" href="order-input.html">注文内容を修正する</a>
     </div>
 
     <p class="age-notice age-notice--light">
       20歳未満の者の飲酒は法律で禁止されています。<br>
       20歳未満の者に対しては酒類を販売しません。
     </p>
+
+    <p class="ec-note" style="margin-top:1.5rem;">
+      「注文内容を確定する」を押すと、ご注文内容が当社に送信されます。
+      この時点では代金の決済は行われません。お振込先は追ってメールでご案内いたします。
+    </p>
+
+    <p class="ec-error" id="err" hidden></p>
+
+    <!-- 注文送信（FormSubmit経由で info@hasibune.jp へ届きます） -->
+    <form id="orderForm" action="https://formsubmit.co/info@hasibune.jp" method="POST">
+      <input type="hidden" name="_subject" id="fSubject" value="【HASIBUNE】新規ご注文">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" id="fNext" value="https://www.hasibune.jp/order-complete.html">
+      <input type="hidden" name="注文番号" id="fOrderNo">
+      <input type="hidden" name="注文日時" id="fDate">
+      <input type="hidden" name="商品名" id="fItem">
+      <input type="hidden" name="単価（税込）" id="fUnit">
+      <input type="hidden" name="数量" id="fQty">
+      <input type="hidden" name="小計（税込）" id="fSub">
+      <input type="hidden" name="送料（税込）" id="fShip">
+      <input type="hidden" name="合計金額（税込）" id="fTotal">
+      <input type="hidden" name="氏名" id="fName">
+      <input type="hidden" name="郵便番号" id="fZip">
+      <input type="hidden" name="住所" id="fAddr">
+      <input type="hidden" name="電話番号" id="fTel">
+      <input type="hidden" name="メールアドレス" id="fMail">
+      <input type="hidden" name="生年月日" id="fBirth">
+      <input type="hidden" name="年齢" id="fAge">
+      <input type="hidden" name="年齢確認" id="fVerified">
+      <input type="hidden" name="お支払い方法" value="銀行振込（前払い）">
+      <input type="hidden" name="備考" id="fNote">
+
+      <div class="ec-buttons">
+        <button type="submit" class="ec-btn" id="submitBtn">注文内容を確定する</button>
+        <a class="ec-btn ec-btn--ghost" href="order-input.html">注文内容を修正する</a>
+      </div>
+    </form>
 
     <a class="ec-back-link" href="tokushoho.html">特定商取引法等に基づく表記を見る →</a>
   </main>
@@ -192,8 +188,8 @@
           <li><a href="about.html">会社概要</a></li>
           <li><a href="services.html">サービス</a></li>
           <li><a href="design.html">デザイン・ウェブデザイン</a></li>
-          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
         </ul>
       </nav>
     </div>
@@ -209,5 +205,76 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/order.js"></script>
+  <script>
+    (function () {
+      var o = requireStep(['qty','name','email','birthday'], 'order-input.html');
+      if (!o) return;
+
+      // 年齢確認を経ていない、または20歳未満の場合は進ませない
+      if (!o.ageVerified || !isAdult(o.birthday)) {
+        location.replace('order-age.html');
+        return;
+      }
+
+      var t = calcTotals(o.qty);
+      var now = new Date();
+      var orderNo = o.orderNo || makeOrderNo(now);
+      var orderedAt = formatDate(now) + ' ' + ('0' + now.getHours()).slice(-2) + ':' + ('0' + now.getMinutes()).slice(-2);
+      var shipText = t.shipping === 0 ? '無料' : yen(t.shipping);
+      var birthText = formatDate(new Date(o.birthday)) + '（' + o.age + '歳）';
+
+      saveOrder({ orderNo: orderNo, orderedAt: orderedAt, totals: t });
+
+      var set = function (id, v) { document.getElementById(id).textContent = v; };
+      set('itemName', PRODUCT.name);
+      set('pUnit', yen(t.unit));
+      set('pQty', t.qty + '本');
+      set('pSub', yen(t.subtotal));
+      set('pShip', shipText);
+      set('pTotal', yen(t.total));
+      set('bName', o.name + ' 様');
+      set('bZip', '〒' + o.zip);
+      set('bAddr', o.address);
+      set('bTel', o.tel);
+      set('bMail', o.email);
+      set('bBirth', birthText);
+      set('bNote', o.note ? o.note : '（なし）');
+
+      var val = function (id, v) { document.getElementById(id).value = v; };
+      val('fSubject', '【HASIBUNE】新規ご注文 ' + orderNo);
+      val('fOrderNo', orderNo);
+      val('fDate', orderedAt);
+      val('fItem', PRODUCT.name);
+      val('fUnit', yen(t.unit));
+      val('fQty', t.qty + '本');
+      val('fSub', yen(t.subtotal));
+      val('fShip', shipText);
+      val('fTotal', yen(t.total));
+      val('fName', o.name);
+      val('fZip', o.zip);
+      val('fAddr', o.address);
+      val('fTel', o.tel);
+      val('fMail', o.email);
+      val('fBirth', formatDate(new Date(o.birthday)));
+      val('fAge', o.age + '歳');
+      val('fVerified', '20歳以上であることを購入者本人が確認済み');
+      val('fNote', o.note || '（なし）');
+
+      // ローカル確認用：本番ドメイン以外では送信せず完了画面へ進む
+      var form = document.getElementById('orderForm');
+      var btn = document.getElementById('submitBtn');
+      form.addEventListener('submit', function (e) {
+        saveOrder({ submitted: true });
+        if (location.hostname !== 'www.hasibune.jp' && location.hostname !== 'hasibune.jp') {
+          e.preventDefault();
+          location.href = 'order-complete.html';
+          return;
+        }
+        btn.disabled = true;
+        btn.textContent = '送信しています…';
+      });
+    })();
+  </script>
 </body>
 </html>

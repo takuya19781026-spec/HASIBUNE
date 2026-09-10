@@ -3,20 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>納品書・請求書｜株式会社HASIBUNE オンラインストア</title>
-  <meta name="description" content="株式会社HASIBUNE オンラインストアの納品書（請求書）です。20歳未満の者に対しては酒類を販売しません。">
+  <title>納品書・請求書｜株式会社HASIBUNE</title>
+  <meta name="description" content="HASIBUNEオンラインショップの納品書・請求書です。">
   <link rel="canonical" href="https://www.hasibune.jp/invoice.html">
   <meta name="robots" content="noindex">
-
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="株式会社HASIBUNE">
-  <meta property="og:title" content="納品書・請求書｜株式会社HASIBUNE オンラインストア">
+  <meta property="og:title" content="納品書・請求書｜株式会社HASIBUNE">
   <meta property="og:url" content="https://www.hasibune.jp/invoice.html">
   <meta property="og:locale" content="ja_JP">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="ec-page">
@@ -43,29 +42,29 @@
   </header>
 
   <main class="ec-main">
-    <p class="ec-screen-label">Online Store</p>
+    <p class="ec-screen-label">Online Shop</p>
     <h1 class="ec-title">納品書・請求書</h1>
 
-    <div class="ec-doc">
+    <div class="ec-doc" id="doc">
       <p class="ec-doc-meta">
-        納品（請求）No. 2025-0001<br>
-        令和7年10月1日
+        納品（請求）No. <span id="orderNo">－</span><br>
+        <span id="issueDate">－</span>
       </p>
 
-      <p class="ec-doc-to">徳島　花子　様</p>
+      <p class="ec-doc-to"><span id="toName">－</span>　様</p>
 
       <p class="ec-doc-from">
         〒771-0131<br>
         徳島県徳島市川内町大松900-19<br>
         株式会社HASIBUNE<br>
-        HASIBUNE オンラインストア<br>
+        HASIBUNE オンラインショップ<br>
         TEL：080-4038-2368
       </p>
 
       <h2 class="ec-doc-heading">納品書（請求書）</h2>
 
       <p class="ec-doc-lead">
-        この度は、HASIBUNE オンラインストアでお買い上げいただきありがとうございます。<br>
+        この度は、HASIBUNE オンラインショップでお買い上げいただきありがとうございます。<br>
         下記のとおり、納品（請求）いたします。
       </p>
 
@@ -86,42 +85,40 @@
         </thead>
         <tbody>
           <tr>
-            <td>Soupir d'amour（スピー・ダムール）スパークリングワイン 750ml</td>
-            <td class="num">3,300円</td>
+            <td id="rItem">－</td>
+            <td class="num" id="rUnit">－</td>
+            <td class="num" id="rQty">－</td>
+            <td class="num" id="rSub">－</td>
+          </tr>
+          <tr>
+            <td>送料（クール便）</td>
+            <td class="num" id="rShipUnit">－</td>
             <td class="num">1</td>
-            <td class="num">3,300円</td>
-          </tr>
-          <tr>
-            <td>送料</td>
-            <td class="num">990円</td>
-            <td class="num">1</td>
-            <td class="num">990円</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td class="num">&nbsp;</td>
-            <td class="num">&nbsp;</td>
-            <td class="num">&nbsp;</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td class="num">&nbsp;</td>
-            <td class="num">&nbsp;</td>
-            <td class="num">&nbsp;</td>
+            <td class="num" id="rShip">－</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <th scope="row" colspan="3">合計</th>
-            <td class="num">4,290円</td>
+            <td class="num" id="rTotal">－</td>
           </tr>
         </tfoot>
       </table>
 
+      <div class="ec-bank">
+        <h3>お振込先</h3>
+        <!-- ★ 実際の振込先口座に書き換えてください -->
+        <dl>
+          <dt>金融機関</dt><dd><span class="ec-fill">　　　　銀行　　　　支店</span></dd>
+          <dt>口座種別・番号</dt><dd><span class="ec-fill">普通　　　　　　　</span></dd>
+          <dt>口座名義</dt><dd><span class="ec-fill">カブシキガイシャハシブネ</span></dd>
+        </dl>
+        <p class="ec-note">※ 振込手数料はお客様のご負担となります。</p>
+      </div>
+
       <p class="ec-note">
         ※ 上記金額には消費税が含まれています。<br>
-        ※ お振込みは令和7年10月8日までにお願いいたします。<br>
-        ※ 振込手数料はお客様のご負担となります。
+        ※ お振込期限：<span id="dueDate">－</span>
       </p>
 
       <p class="age-notice age-notice--light" style="margin-top:2rem;">
@@ -130,7 +127,14 @@
       </p>
     </div>
 
-    <a class="ec-back-link" href="order-confirm.html">← 注文内容確認画面に戻る</a>
+    <div class="ec-buttons">
+      <button type="button" class="ec-btn" id="printBtn">印刷・PDF保存</button>
+      <a class="ec-btn ec-btn--ghost" href="index.html">トップページへ</a>
+    </div>
+
+    <p class="ec-note" id="noOrder" hidden>
+      表示できるご注文がありません。<a href="shop.html" class="ec-inline-link">商品ページ</a>からお進みください。
+    </p>
   </main>
 
   <footer class="site-footer">
@@ -162,8 +166,8 @@
           <li><a href="about.html">会社概要</a></li>
           <li><a href="services.html">サービス</a></li>
           <li><a href="design.html">デザイン・ウェブデザイン</a></li>
-          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
           <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
         </ul>
       </nav>
     </div>
@@ -179,5 +183,35 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/order.js"></script>
+  <script>
+    (function () {
+      var o = loadOrder();
+      if (!o.orderNo) {
+        document.getElementById('doc').hidden = true;
+        document.getElementById('printBtn').hidden = true;
+        document.getElementById('noOrder').hidden = false;
+        return;
+      }
+      var t = o.totals || calcTotals(o.qty);
+      var now = new Date();
+      var due = new Date(now.getTime() + 7 * 24 * 60 * 60 * 1000);
+      var set = function (id, v) { var el = document.getElementById(id); if (el) el.textContent = v; };
+
+      set('orderNo', o.orderNo);
+      set('issueDate', formatDate(now));
+      set('toName', o.name || '－');
+      set('rItem', PRODUCT.name);
+      set('rUnit', yen(t.unit));
+      set('rQty', t.qty);
+      set('rSub', yen(t.subtotal));
+      set('rShipUnit', t.shipping === 0 ? '無料' : yen(t.shipping));
+      set('rShip', t.shipping === 0 ? '無料' : yen(t.shipping));
+      set('rTotal', yen(t.total));
+      set('dueDate', formatDate(due));
+
+      document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+    })();
+  </script>
 </body>
 </html>

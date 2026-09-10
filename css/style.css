@@ -1061,3 +1061,195 @@ ul {
     white-space: normal;
   }
 }
+
+/* =========================================================
+   オンライン注文フロー（商品ページ〜注文完了・納品書）
+   ========================================================= */
+
+.ec-spec {
+  display: grid;
+  grid-template-columns: 8rem 1fr;
+  gap: 0.4rem 1rem;
+  margin: 0 0 1.6rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(42,36,32,0.12);
+}
+.ec-spec dt { font-size: 14px; color: #8a7660; letter-spacing: 0.04em; }
+.ec-spec dd { font-size: 14px; color: #2a2420; margin: 0; }
+
+.ec-price-lead { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.4rem; }
+.ec-price-main {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.ec-price-tax { font-size: 14px; color: #666; }
+
+.ec-qty-row {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin: 1.6rem 0 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(42,36,32,0.12);
+}
+.ec-qty-row label { font-size: 15px; color: #2a2420; }
+.ec-qty-row select {
+  font-family: var(--font-main);
+  font-size: 15px;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(42,36,32,0.3);
+  background: #fff;
+  border-radius: 0;
+  color: #1a1a1a;
+}
+.ec-qty-total {
+  flex: 1 1 100%;
+  font-size: 14px;
+  color: #555;
+  font-variant-numeric: tabular-nums;
+}
+
+.ec-fixed-value { font-size: 15px; color: #1a1a1a; margin: 0; }
+
+.ec-inline-link {
+  color: #8a7660;
+  border-bottom: 1px solid rgba(138,118,96,0.4);
+}
+.ec-inline-link:hover { color: #b8963e; border-color: #b8963e; }
+
+/* エラー表示 */
+.ec-error {
+  font-size: 15px;
+  font-weight: 500;
+  color: #8b1a1a;
+  background: rgba(139,26,26,0.07);
+  border: 1px solid rgba(139,26,26,0.35);
+  padding: 0.85rem 1.1rem;
+  margin: 1.2rem 0 0;
+}
+
+/* 年齢確認 */
+.ec-age-big {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  letter-spacing: 0.05em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ec-consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(42,36,32,0.25);
+  background: #fff;
+  cursor: pointer;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #2a2420;
+}
+.ec-consent input { margin-top: 0.35rem; width: 18px; height: 18px; flex-shrink: 0; accent-color: #8b1a1a; }
+.ec-consent strong { font-weight: 700; }
+
+.ec-blocked {
+  border: 2px solid #8b1a1a;
+  background: rgba(139,26,26,0.05);
+  padding: 1.4rem 1.5rem;
+  margin-top: 1.8rem;
+}
+.ec-blocked-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: #8b1a1a;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.8rem;
+}
+.ec-blocked p { font-size: 15px; line-height: 1.95; color: #2a2420; margin: 0; }
+
+/* 注文完了 */
+.ec-complete {
+  text-align: center;
+  padding: 1.5rem 0 2.2rem;
+  border-bottom: 1px solid rgba(42,36,32,0.12);
+  margin-bottom: 1.5rem;
+}
+.ec-complete-lead {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  letter-spacing: 0.1em;
+  margin: 0 0 1.6rem;
+}
+.ec-orderno-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  color: #b8963e;
+  margin: 0 0 0.5rem;
+}
+.ec-orderno {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  letter-spacing: 0.12em;
+  color: #1a1a1a;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.ec-next-steps {
+  margin-top: 2rem;
+  padding: 1.4rem 1.5rem;
+  background: #f8f6f2;
+  border: 1px solid rgba(42,36,32,0.1);
+}
+.ec-next-steps h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  margin: 0 0 1rem;
+}
+.ec-next-steps ol { margin: 0 0 1rem; padding-left: 1.3rem; list-style: decimal; }
+.ec-next-steps li { font-size: 15px; line-height: 2; color: #444; margin-bottom: 0.4rem; }
+.ec-next-steps strong { font-weight: 700; color: #1a1a1a; }
+
+/* 納品書の振込先 */
+.ec-bank {
+  margin-top: 1.8rem;
+  border: 1px solid #2a2420;
+  padding: 1.2rem 1.3rem;
+}
+.ec-bank h3 {
+  font-family: var(--font-heading);
+  font-size: 0.98rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  margin: 0 0 0.9rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(42,36,32,0.2);
+}
+.ec-bank dl { display: grid; grid-template-columns: 9rem 1fr; gap: 0.5rem 1rem; margin: 0; }
+.ec-bank dt { font-size: 14px; color: #2a2420; }
+.ec-bank dd { font-size: 14px; color: #444; margin: 0; }
+
+@media print {
+  .site-header, .site-footer, .ec-buttons, .ec-screen-label,
+  .ec-title, .ec-flow, .ec-back-link { display: none !important; }
+  .ec-main { padding: 0 !important; }
+  .ec-doc { border: none !important; padding: 0 !important; }
+  body { background: #fff !important; }
+}
+
+@media (max-width: 768px) {
+  .ec-spec { grid-template-columns: 6.5rem 1fr; }
+  .ec-bank dl { grid-template-columns: 1fr; gap: 0.1rem; }
+  .ec-bank dt { margin-top: 0.6rem; color: #8a7660; }
+  .ec-qty-row { gap: 0.6rem; }
+}
