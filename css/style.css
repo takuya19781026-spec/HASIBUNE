@@ -541,3 +541,523 @@ ul {
     max-height: 260px !important;
   }
 }
+
+/* =========================================================
+   未成年者飲酒禁止表示
+   酒税法・国税庁「酒類の販売業免許の取扱いについて」に基づき
+   10ポイント以上の大きさで表示する。
+   （10pt = 13.33px のため、基準を 16px = 12pt とする）
+   ========================================================= */
+.age-notice {
+  font-family: var(--font-main);
+  font-size: 16px;          /* 12pt（10ポイント以上） */
+  line-height: 1.9;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.age-notice strong {
+  font-weight: 700;
+}
+
+/* 明るい背景用 */
+.age-notice--light {
+  color: #1a1a1a;
+  background: #fff;
+  border: 2px solid #8b1a1a;
+  padding: 1.1rem 1.3rem;
+}
+
+/* 暗い背景（フッター）用 */
+.age-notice--dark {
+  color: #f0ebe0;
+  background: rgba(184,150,62,0.08);
+  border: 1px solid rgba(184,150,62,0.45);
+  padding: 1rem 1.2rem;
+}
+
+.footer-age-notice {
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+}
+
+/* =========================================================
+   EC 画面（購入者情報入力・注文確認・納品書/請求書・特商法表記）
+   ========================================================= */
+.ec-page {
+  background: #f8f6f2;
+}
+
+.ec-main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 5rem;
+}
+
+.ec-screen-label {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  color: #b8963e;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+}
+
+.ec-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  letter-spacing: 0.14em;
+  color: #1a1a1a;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(42,36,32,0.15);
+}
+
+.ec-card {
+  background: #fff;
+  border: 1px solid rgba(42,36,32,0.12);
+  padding: 2.2rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.ec-card-title {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  color: #1a1a1a;
+  margin-bottom: 1.4rem;
+  padding-left: 0.8rem;
+  border-left: 3px solid #b8963e;
+}
+
+/* --- フォーム --- */
+.ec-field {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid rgba(42,36,32,0.08);
+}
+
+.ec-field > label,
+.ec-field > .ec-label {
+  font-size: 15px;
+  font-weight: 400;
+  color: #2a2420;
+  letter-spacing: 0.04em;
+}
+
+.ec-req {
+  color: #8b1a1a;
+  font-size: 13px;
+  margin-left: 0.35rem;
+}
+
+.ec-field input,
+.ec-field select {
+  width: 100%;
+  font-family: var(--font-main);
+  font-size: 15px;
+  color: #1a1a1a;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid rgba(42,36,32,0.3);
+  background: #fff;
+  border-radius: 0;
+}
+
+.ec-field input:focus,
+.ec-field select:focus {
+  outline: none;
+  border-color: #b8963e;
+}
+
+/* 生年月日（年齢確認欄） */
+.ec-field--age {
+  border-bottom: none;
+  padding-bottom: 0.4rem;
+}
+
+.ec-birth-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.ec-birth-row input[type="date"] {
+  flex: 1 1 200px;
+}
+
+.ec-age-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 15px;
+  color: #2a2420;
+}
+
+.ec-age-box input {
+  width: 80px;
+  text-align: center;
+}
+
+/* 年齢確認欄に近接して表示する注意書き（同一視野の範囲） */
+.ec-age-alert {
+  grid-column: 2 / -1;
+  margin-top: 0.7rem;
+  background: #fff;
+  border: 2px solid #8b1a1a;
+  padding: 0.9rem 1.1rem;
+}
+
+.ec-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 2.5rem 0 1rem;
+}
+
+.ec-btn {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  padding: 1rem 2.6rem;
+  border: 1px solid #2a2420;
+  background: #2a2420;
+  color: #f0ebe0;
+  cursor: pointer;
+  transition: opacity 0.25s;
+  text-align: center;
+}
+
+.ec-btn:hover {
+  opacity: 0.82;
+}
+
+.ec-btn--ghost {
+  background: transparent;
+  color: #2a2420;
+}
+
+/* --- 商品・金額 --- */
+.ec-order-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.ec-thumb {
+  border: 1px solid rgba(42,36,32,0.15);
+  background: #fff;
+  padding: 0.6rem;
+}
+
+.ec-thumb img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.ec-item-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  color: #1a1a1a;
+  margin-bottom: 1.2rem;
+}
+
+/* 価格表（この文字サイズが「価格表示に使用する文字」の基準） */
+.ec-price-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ec-price-table th,
+.ec-price-table td {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0.6rem 0.4rem;
+  border-bottom: 1px solid rgba(42,36,32,0.12);
+  text-align: right;
+  color: #2a2420;
+}
+
+.ec-price-table th {
+  text-align: left;
+  letter-spacing: 0.06em;
+}
+
+.ec-price-table .ec-total th,
+.ec-price-table .ec-total td {
+  font-weight: 700;
+  font-size: 16px;
+  color: #1a1a1a;
+  border-bottom: 2px solid #2a2420;
+}
+
+/* --- 定義リスト（特商法表記・注文確認の各項目） --- */
+.ec-dl {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+
+.ec-dl dt {
+  font-size: 15px;
+  font-weight: 500;
+  color: #2a2420;
+  letter-spacing: 0.05em;
+  padding: 1rem 1rem 1rem 0;
+  border-bottom: 1px solid rgba(42,36,32,0.1);
+}
+
+.ec-dl dd {
+  font-size: 15px;
+  font-weight: 300;
+  color: #444;
+  line-height: 1.95;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(42,36,32,0.1);
+  margin: 0;
+}
+
+/* 酒類販売管理者標識 */
+.ec-marker {
+  border: 2px solid #2a2420;
+  background: #fff;
+  padding: 1.4rem 1.5rem;
+}
+
+.ec-marker h3 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(42,36,32,0.2);
+}
+
+.ec-marker dl {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0.55rem 1rem;
+}
+
+.ec-marker dt,
+.ec-marker dd {
+  font-size: 15px;
+  color: #2a2420;
+  margin: 0;
+  line-height: 1.8;
+}
+
+.ec-marker dd {
+  font-weight: 300;
+  color: #444;
+}
+
+/* 未確定項目（実際の研修受講内容に合わせて記入） */
+.ec-fill {
+  border-bottom: 1px dashed #8b1a1a;
+  padding: 0 0.4rem;
+  color: #8b1a1a;
+}
+
+/* --- 納品書・請求書 --- */
+.ec-doc {
+  background: #fff;
+  border: 1px solid rgba(42,36,32,0.15);
+  padding: 3rem 2.5rem;
+}
+
+.ec-doc-meta {
+  text-align: right;
+  font-size: 15px;
+  color: #2a2420;
+  line-height: 1.9;
+}
+
+.ec-doc-to {
+  font-size: 16px;
+  color: #1a1a1a;
+  letter-spacing: 0.08em;
+  margin-top: 1.5rem;
+}
+
+.ec-doc-from {
+  margin-top: 1.5rem;
+  text-align: right;
+  font-size: 15px;
+  font-weight: 300;
+  color: #2a2420;
+  line-height: 1.9;
+}
+
+.ec-doc-heading {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-align: center;
+  color: #1a1a1a;
+  margin: 2.5rem 0 1.8rem;
+}
+
+.ec-doc-lead {
+  font-size: 15px;
+  font-weight: 300;
+  color: #444;
+  line-height: 2;
+}
+
+.ec-doc-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.ec-doc-table th,
+.ec-doc-table td {
+  border: 1px solid #2a2420;
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0.75rem 0.8rem;
+  color: #2a2420;
+}
+
+.ec-doc-table thead th {
+  background: #f2efe9;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+
+.ec-doc-table td.num {
+  text-align: right;
+}
+
+.ec-doc-table tfoot th,
+.ec-doc-table tfoot td {
+  font-weight: 700;
+  background: #f2efe9;
+}
+
+.ec-note {
+  font-size: 14px;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.9;
+  margin-top: 1rem;
+}
+
+.ec-back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: #8a7660;
+  border-bottom: 1px solid rgba(138,118,96,0.4);
+  padding-bottom: 0.2rem;
+}
+
+.ec-back-link:hover {
+  color: #b8963e;
+  border-color: #b8963e;
+}
+
+.ec-flow {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.2rem;
+}
+
+.ec-flow span {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: #9a8878;
+  border: 1px solid rgba(42,36,32,0.15);
+  padding: 0.4rem 0.9rem;
+  background: #fff;
+}
+
+.ec-flow span.current {
+  color: #fff;
+  background: #2a2420;
+  border-color: #2a2420;
+}
+
+@media (max-width: 768px) {
+  .ec-main {
+    padding: 6.5rem 1.1rem 4rem;
+  }
+  .ec-card,
+  .ec-doc {
+    padding: 1.5rem 1.1rem;
+  }
+  .ec-field {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .ec-age-alert {
+    grid-column: 1 / -1;
+  }
+  .ec-order-grid {
+    grid-template-columns: 1fr;
+  }
+  .ec-thumb img {
+    height: 220px;
+  }
+  .ec-dl,
+  .ec-marker dl {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .ec-dl dt {
+    border-bottom: none;
+    padding-bottom: 0.2rem;
+  }
+  .ec-marker dl {
+    gap: 0.15rem;
+  }
+  .ec-marker dt {
+    margin-top: 0.7rem;
+    font-weight: 500;
+  }
+  .ec-doc-table th,
+  .ec-doc-table td {
+    padding: 0.55rem 0.4rem;
+    font-size: 14px;
+  }
+}
+
+.ec-doc-table td.num,
+.ec-doc-table tfoot td {
+  white-space: nowrap;
+}
+
+.ec-doc-table thead th {
+  white-space: nowrap;
+}
+
+.ec-marker dt {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .ec-doc-table thead th,
+  .ec-doc-table td.num {
+    white-space: normal;
+  }
+  .ec-marker dt {
+    white-space: normal;
+  }
+}

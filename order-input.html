@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購入者情報の入力｜株式会社HASIBUNE オンラインストア</title>
+  <meta name="description" content="株式会社HASIBUNE オンラインストアの購入者情報入力画面です。20歳未満の者に対しては酒類を販売しません。">
+  <link rel="canonical" href="https://www.hasibune.jp/order-input.html">
+  <meta name="robots" content="noindex">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社HASIBUNE">
+  <meta property="og:title" content="購入者情報の入力｜株式会社HASIBUNE オンラインストア">
+  <meta property="og:url" content="https://www.hasibune.jp/order-input.html">
+  <meta property="og:locale" content="ja_JP">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="ec-page">
+
+  <header class="site-header">
+    <a href="index.html" class="logo">
+      HASIBUNE
+      <span>株式会社HASIBUNE</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="wine-original.html">スピー・ダムール</a></li>
+        <li><a href="design.html">デザイン</a></li>
+        <li><a href="https://shop.hasibune.jp/" target="_blank" rel="noopener">オンラインストア</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="ec-main">
+    <p class="ec-screen-label">Online Store</p>
+    <h1 class="ec-title">購入者情報の入力</h1>
+
+    <div class="ec-flow">
+      <span>1. 商品を選ぶ</span>
+      <span class="current">2. 購入者情報の入力</span>
+      <span>3. 注文内容の確認</span>
+      <span>4. 注文完了</span>
+    </div>
+
+    <form class="ec-card" action="order-confirm.html" method="get">
+      <h2 class="ec-card-title">お客様情報</h2>
+
+      <div class="ec-field">
+        <label for="name">氏名<span class="ec-req">必須</span></label>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="例）徳島 花子" required>
+      </div>
+
+      <div class="ec-field">
+        <label for="zip">郵便番号<span class="ec-req">必須</span></label>
+        <input type="text" id="zip" name="zip" autocomplete="postal-code" placeholder="例）771-0131" required>
+      </div>
+
+      <div class="ec-field">
+        <label for="address">住所<span class="ec-req">必須</span></label>
+        <input type="text" id="address" name="address" autocomplete="street-address" placeholder="例）徳島県徳島市川内町大松900-19" required>
+      </div>
+
+      <div class="ec-field">
+        <label for="tel">電話番号<span class="ec-req">必須</span></label>
+        <input type="tel" id="tel" name="tel" autocomplete="tel" placeholder="例）080-4038-2368" required>
+      </div>
+
+      <div class="ec-field">
+        <label for="email">メールアドレス<span class="ec-req">必須</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="例）example@hasibune.jp" required>
+      </div>
+
+      <!-- 年齢確認欄。注意書きは年齢記載欄に近接し、同一視野に入る位置に表示する。 -->
+      <div class="ec-field ec-field--age">
+        <label for="birthday">★ 生年月日<span class="ec-req">必須</span></label>
+        <div>
+          <div class="ec-birth-row">
+            <input type="date" id="birthday" name="birthday" autocomplete="bday" required>
+            <span class="ec-age-box">
+              <input type="text" id="age" name="age" inputmode="numeric" placeholder="－" aria-label="年齢">
+              歳
+            </span>
+          </div>
+        </div>
+        <p class="age-notice ec-age-alert">
+          ※ <strong>20歳未満の者に対しては酒類を販売しません。</strong><br>
+          ※ 20歳未満の者の飲酒は法律で禁止されています。
+        </p>
+      </div>
+
+      <div class="ec-field">
+        <label for="payment">決済方法<span class="ec-req">必須</span></label>
+        <select id="payment" name="payment" required>
+          <option value="">選択してください</option>
+          <option value="bank">銀行振込</option>
+          <option value="credit">クレジットカード決済</option>
+          <option value="cvs">コンビニ決済</option>
+          <option value="cod">代金引換</option>
+        </select>
+      </div>
+
+      <div class="ec-buttons">
+        <button type="submit" class="ec-btn">次へ</button>
+      </div>
+    </form>
+
+    <p class="age-notice age-notice--light">
+      20歳未満の者の飲酒は法律で禁止されています。<br>
+      20歳未満の者に対しては酒類を販売しません。
+    </p>
+
+    <a class="ec-back-link" href="wine.html">← ワイン販売のページに戻る</a>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">HASIBUNE</div>
+        <p>
+          〒771-0131<br>
+          徳島市川内町大松900-19<br>
+          Mobile: 080-4038-2368<br>
+          Email: info@hasibune.jp<br>
+          <br>
+          〒141-0021<br>
+          東京都品川区上大崎2丁目13-28<br>
+          ソフィア白金301
+        </p>
+        <a href="https://www.instagram.com/hasibune_official/" target="_blank" rel="noopener" class="footer-sns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="design.html">デザイン・ウェブデザイン</a></li>
+          <li><a href="tokushoho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-age-notice">
+      <p class="age-notice age-notice--dark">
+        20歳未満の者の飲酒は法律で禁止されています。<br>
+        20歳未満の者に対しては酒類を販売しません。
+      </p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 株式会社HASIBUNE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // 生年月日から年齢を自動計算し、年齢記載欄に表示する
+    (function () {
+      var birthday = document.getElementById('birthday');
+      var age = document.getElementById('age');
+      if (!birthday || !age) return;
+      birthday.addEventListener('change', function () {
+        if (!birthday.value) { age.value = ''; return; }
+        var b = new Date(birthday.value);
+        var now = new Date();
+        var a = now.getFullYear() - b.getFullYear();
+        var m = now.getMonth() - b.getMonth();
+        if (m < 0 || (m === 0 && now.getDate() < b.getDate())) a--;
+        age.value = a >= 0 ? a : '';
+      });
+    })();
+  </script>
+</body>
+</html>
