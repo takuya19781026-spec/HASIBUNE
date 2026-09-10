@@ -1260,3 +1260,77 @@ ul {
   font-size: 20px;
   line-height: 1.8;
 }
+
+/* =========================================================
+   スマートフォン用 固定注文ボタン（ワイン購入導線）
+   - スマートフォン表示時のみ画面下部に固定表示
+   - iPhoneのホームインジケーターに重ならないよう safe-area に対応
+   - 同じ高さのスペーサーを置き、本文や操作ボタンを隠さない
+   ========================================================= */
+.mobile-order-cta,
+.mobile-order-spacer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-order-spacer {
+    display: block;
+    height: calc(4.6rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .mobile-order-cta {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1200;
+    padding: 0.65rem 1rem;
+    padding-bottom: calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(20, 16, 12, 0.95);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(184, 150, 62, 0.4);
+  }
+
+  .mobile-order-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    padding: 0.95rem 1rem;
+    background: #b8963e;
+    color: #14100c;
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.18em;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+
+  .mobile-order-cta a:active {
+    background: #a5842f;
+  }
+
+  /* ボタン内の装飾（サイト既存のひし形モチーフに合わせる） */
+  .mobile-order-cta a::before,
+  .mobile-order-cta a::after {
+    content: "";
+    width: 4px;
+    height: 4px;
+    border: 1px solid rgba(20, 16, 12, 0.55);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+}
+
+/* フッターの「ワインのご注文」を目立たせる */
+.footer-nav a.footer-order-link {
+  color: #d4b872;
+  font-weight: 500;
+}
+
+.footer-nav a.footer-order-link:hover {
+  color: #e6cf95;
+}

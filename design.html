@@ -793,6 +793,7 @@
       </div>
       <nav class="footer-nav">
         <ul>
+          <li><a href="/shop.html" class="footer-order-link">ワインのご注文</a></li>
           <li><a href="index.html">ホーム</a></li>
           <li><a href="about.html">会社概要</a></li>
           <li><a href="services.html">サービス</a></li>
@@ -822,5 +823,11 @@
       hdr.style.boxShadow = window.scrollY > 40 ? '0 1px 0 rgba(0,0,0,0.08)' : 'none';
     }, { passive: true });
   </script>
+
+  <!-- スマートフォン用 固定注文ボタン（ワイン購入導線） -->
+  <div class="mobile-order-spacer" aria-hidden="true"></div>
+  <div class="mobile-order-cta">
+    <a href="/shop.html">ワインを注文する</a>
+  </div>
 </body>
 </html>
