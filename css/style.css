@@ -1080,7 +1080,7 @@ ul {
 .ec-price-lead { display: flex; align-items: baseline; gap: 0.4rem; margin-bottom: 0.4rem; }
 .ec-price-main {
   font-family: var(--font-heading);
-  font-size: 1.8rem;
+  font-size: 1.25rem;   /* 20px：未成年者飲酒禁止表示と同じ大きさに揃える */
   color: #1a1a1a;
   letter-spacing: 0.04em;
   font-variant-numeric: tabular-nums;
@@ -1252,4 +1252,11 @@ ul {
   .ec-bank dl { grid-template-columns: 1fr; gap: 0.1rem; }
   .ec-bank dt { margin-top: 0.6rem; color: #8a7660; }
   .ec-qty-row { gap: 0.6rem; }
+}
+
+/* 商品ページ：価格表示（20px）以上の大きさで未成年者飲酒禁止表示を出す
+   （国税庁「価格表示に使用する文字以上の大きさで表示する」への対応） */
+.age-notice--price {
+  font-size: 20px;
+  line-height: 1.8;
 }
