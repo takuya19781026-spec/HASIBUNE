@@ -535,6 +535,12 @@ ul {
     line-height: 1.9 !important;
   }
 
+  /* ===== HOME: オリジナルプロダクト ===== */
+  .home-prod-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.6rem !important;
+  }
+
   .home-about-img {
     order: -1;
     height: 56vw !important;
