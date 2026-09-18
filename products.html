@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>オリジナルプロダクト｜Soupir d'amour（スピー・ダムール）｜株式会社HASIBUNE</title>
+  <meta name="description" content="株式会社HASIBUNEのオリジナルプロダクト。木頭実生柚子の香りを届けるブランド「Soupir d'amour（スピー・ダムール）」のスパークリングワインとバスソルトをご紹介します。">
+  <link rel="canonical" href="https://www.hasibune.jp/products.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社HASIBUNE">
+  <meta property="og:title" content="オリジナルプロダクト｜Soupir d'amour（スピー・ダムール）｜株式会社HASIBUNE">
+  <meta property="og:description" content="木頭実生柚子の香りを届けるブランド「Soupir d'amour」のスパークリングワインとバスソルトをご紹介します。">
+  <meta property="og:url" content="https://www.hasibune.jp/products.html">
+  <meta property="og:image" content="https://www.hasibune.jp/images/soupir-hero.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --g: #b8963e;
+      --gl: #d4b872;
+      --ink: #080604;
+      --ink2: #0c0a07;
+      --cream: #f0ebe0;
+      --muted: rgba(240,235,224,0.45);
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ---- header override（黒背景に合わせる） ---- */
+    .site-header {
+      background: rgba(8,6,4,0.92);
+      border-bottom: 1px solid rgba(184,150,62,0.12);
+    }
+    .site-header .logo { color: #fff; }
+    .site-header .logo span { color: rgba(255,255,255,0.55); }
+    .site-header .nav-menu a { color: rgba(255,255,255,0.85); }
+    .site-header .nav-menu a.active { color: var(--gl); }
+    .site-header .nav-toggle span { background: #fff; }
+
+    /* ---- brand intro ---- */
+    .pp-brand {
+      padding: 12rem 6vw 8rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .pp-brand-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      opacity: 0.14;
+      display: block;
+    }
+    .pp-brand-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .pp-label {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.5em;
+      color: var(--g);
+      margin-bottom: 1.6rem;
+    }
+    .pp-brand-name {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      letter-spacing: 0.06em;
+      color: var(--gl);
+      line-height: 1.2;
+      margin: 0 0 0.9rem;
+    }
+    .pp-brand-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: 0.8rem;
+      letter-spacing: 0.34em;
+      color: rgba(240,235,224,0.6);
+      margin: 0 0 2.6rem;
+    }
+    .pp-rule {
+      width: 1px;
+      height: 46px;
+      background: linear-gradient(to bottom, var(--g), transparent);
+      margin: 0 auto 2.6rem;
+    }
+    .pp-brand-copy {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
+      color: rgba(240,235,224,0.68);
+      line-height: 2.7;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+
+    /* ---- product list ---- */
+    .pp-products {
+      padding: 2rem 6vw 11rem;
+    }
+    .pp-grid {
+      max-width: 1040px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+    }
+    .pp-card {
+      border: 1px solid rgba(184,150,62,0.18);
+      background: var(--ink2);
+      display: flex;
+      flex-direction: column;
+    }
+    .pp-card-visual {
+      position: relative;
+      height: 330px;
+      overflow: hidden;
+      background: #14100b;
+    }
+    .pp-card-visual img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .pp-card-body {
+      padding: 2.8rem 2.6rem 3rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .pp-card-en {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.4em;
+      color: var(--g);
+      margin: 0 0 0.7rem;
+    }
+    .pp-card h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: 1.2rem;
+      letter-spacing: 0.2em;
+      color: var(--cream);
+      margin: 0 0 1.6rem;
+      line-height: 1.6;
+    }
+    .pp-card p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 2.4;
+      letter-spacing: 0.06em;
+      margin: 0 0 2.4rem;
+      flex: 1;
+    }
+    .pp-more {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.9rem 2.6rem;
+      border: 1px solid rgba(184,150,62,0.5);
+      color: var(--gl);
+      font-size: 0.7rem;
+      letter-spacing: 0.32em;
+      text-decoration: none;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .pp-more:hover {
+      background: rgba(184,150,62,0.14);
+      border-color: var(--g);
+      color: var(--cream);
+    }
+
+    .site-footer { border-top: 1px solid rgba(184,150,62,0.1); }
+
+    @media (max-width: 860px) {
+      .pp-brand { padding: 9rem 6vw 6rem; }
+      .pp-products { padding: 1rem 6vw 7rem; }
+      .pp-grid { grid-template-columns: 1fr; gap: 2.6rem; }
+      .pp-card-visual { height: 260px; }
+      .pp-card-body { padding: 2.2rem 1.8rem 2.4rem; }
+      .pp-card p { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <a href="index.html" class="logo">
+      HASIBUNE
+      <span>株式会社HASIBUNE</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="products.html" class="active">オリジナルプロダクト</a></li>
+        <li><a href="design.html">デザイン</a></li>
+        <li><a href="https://shop.hasibune.jp/" target="_blank" rel="noopener">オンラインストア</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- ブランド紹介 -->
+  <section class="pp-brand">
+    <img class="pp-brand-bg" src="images/memory-of-yuzu.jpg" alt="">
+    <div class="pp-brand-inner">
+      <span class="pp-label">— Original Products —</span>
+      <h1 class="pp-brand-name">Soupir d'amour</h1>
+      <p class="pp-brand-ja">スピー・ダムール</p>
+      <div class="pp-rule"></div>
+      <p class="pp-brand-copy">
+        「恋のため息」を意味するフランス語を冠したブランド。<br>
+        徳島・木頭の実生柚子がもつ、やわらかな香りを軸に、<br>
+        記憶に残る時間を届けるプロダクトをつくっています。
+      </p>
+    </div>
+  </section>
+
+
+  <!-- 商品一覧 -->
+  <section class="pp-products">
+    <div class="pp-grid">
+
+      <!-- ワイン -->
+      <article class="pp-card">
+        <div class="pp-card-visual">
+          <img src="images/wine-soupir-damour.jpg" alt="Soupir d'amour スパークリングワイン">
+        </div>
+        <div class="pp-card-body">
+          <p class="pp-card-en">Sparkling Wine</p>
+          <h2>スパークリングワイン</h2>
+          <p>
+            木頭実生柚子とシャルドネが出会った一本。
+            やさしい甘さと華やかな香りが、特別な夜に静かに寄り添います。
+          </p>
+          <a class="pp-more" href="wine-original.html">詳しく見る</a>
+        </div>
+      </article>
+
+      <!-- バスソルト -->
+      <article class="pp-card">
+        <div class="pp-card-visual">
+          <img src="images/Soupir_damour_mobile_01.jpg" alt="Soupir d'amour バスソルト">
+        </div>
+        <div class="pp-card-body">
+          <p class="pp-card-en">Bath Salt</p>
+          <h2>バスソルト</h2>
+          <p>
+            柚子の香りをそのままに、一日の終わりへ。
+            湯気とともに立ちのぼる香りが、こわばった時間をゆっくりとほどいていきます。
+          </p>
+          <a class="pp-more" href="bathsalt.html">詳しく見る</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">HASIBUNE</div>
+        <p>
+          〒771-0131<br>
+          徳島市川内町大松900-19<br>
+          Mobile: 080-4038-2368<br>
+          Email: info@hasibune.jp<br>
+          <br>
+          〒141-0021<br>
+          東京都品川区上大崎2丁目13-28<br>
+          ソフィア白金301
+        </p>
+        <a href="https://www.instagram.com/hasibune_official/" target="_blank" rel="noopener" class="footer-sns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="design.html">デザイン・ウェブデザイン</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 株式会社HASIBUNE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

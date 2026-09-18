@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>バスソルト｜Soupir d'amour（スピー・ダムール）｜株式会社HASIBUNE</title>
+  <meta name="description" content="Soupir d'amour（スピー・ダムール）のバスソルト。徳島・木頭の実生柚子の香りを、一日の終わりのひとときへ。株式会社HASIBUNEのオリジナルプロダクトです。">
+  <link rel="canonical" href="https://www.hasibune.jp/bathsalt.html">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="株式会社HASIBUNE">
+  <meta property="og:title" content="バスソルト｜Soupir d'amour（スピー・ダムール）｜株式会社HASIBUNE">
+  <meta property="og:description" content="徳島・木頭の実生柚子の香りを、一日の終わりのひとときへ。Soupir d'amour のバスソルト。">
+  <meta property="og:url" content="https://www.hasibune.jp/bathsalt.html">
+  <meta property="og:image" content="https://www.hasibune.jp/images/Soupir_damour_pc.jpg">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Sans+JP:wght@200;300;400&family=Noto+Serif+JP:wght@200;300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --g: #b8963e;
+      --gl: #d4b872;
+      --ink: #080604;
+      --cream: #f0ebe0;
+      --muted: rgba(240,235,224,0.45);
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--cream);
+      font-family: 'Noto Sans JP', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ---- header override ---- */
+    .site-header {
+      background: rgba(8,6,4,0.92);
+      border-bottom: 1px solid rgba(184,150,62,0.12);
+    }
+    .site-header .logo { color: #fff; }
+    .site-header .logo span { color: rgba(255,255,255,0.55); }
+    .site-header .nav-menu a { color: rgba(255,255,255,0.85); }
+    .site-header .nav-menu a.active { color: var(--gl); }
+    .site-header .nav-toggle span { background: #fff; }
+
+    /* ---- intro ---- */
+    .bs-intro {
+      padding: 11rem 6vw 5rem;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .bs-label {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.62rem;
+      letter-spacing: 0.5em;
+      color: var(--g);
+      margin-bottom: 1.4rem;
+    }
+    .bs-intro h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      letter-spacing: 0.24em;
+      color: var(--cream);
+      margin: 0 0 0.9rem;
+      line-height: 1.6;
+    }
+    .bs-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      letter-spacing: 0.22em;
+      color: rgba(184,150,62,0.75);
+      margin: 0 0 2.4rem;
+    }
+    .bs-rule {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(to bottom, var(--g), transparent);
+      margin: 0 auto 2.4rem;
+    }
+    .bs-intro p.bs-copy {
+      font-family: 'Noto Serif JP', serif;
+      font-weight: 200;
+      font-size: clamp(0.88rem, 1.4vw, 1rem);
+      color: rgba(240,235,224,0.65);
+      line-height: 2.7;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+
+    /* ============================================
+       POP 画像：画面幅で出し分け
+       768px以上 → PC用の横長POPのみ
+       768px未満 → スマホ用3枚のみ（01→02→03）
+    ============================================ */
+    .bs-visual { padding: 3rem 0 0; }
+
+    .bs-pc {
+      display: block;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 6vw;
+    }
+    .bs-pc img {
+      display: block;
+      width: 100%;
+      height: auto;   /* 縦横比を維持 */
+    }
+
+    .bs-sp { display: none; }
+    .bs-sp img {
+      display: block;
+      width: 100%;
+      height: auto;   /* 縦横比を維持 */
+      margin: 0;      /* 画像間の隙間なし */
+    }
+
+    @media (max-width: 767px) {
+      .bs-pc { display: none; }
+      .bs-sp {
+        display: block;
+        width: 100%;
+        padding: 0;   /* 左右余白なし */
+        font-size: 0; /* インライン要素間の隙間を消す */
+      }
+      .bs-visual { padding: 2rem 0 0; }
+      .bs-intro { padding: 9rem 6vw 4rem; }
+    }
+
+    /* ---- back link ---- */
+    .bs-back {
+      padding: 6rem 6vw 11rem;
+      text-align: center;
+    }
+    .bs-back a {
+      display: inline-block;
+      padding: 1rem 3.2rem;
+      border: 1px solid rgba(184,150,62,0.5);
+      color: rgba(240,235,224,0.8);
+      font-size: 0.72rem;
+      letter-spacing: 0.32em;
+      text-decoration: none;
+      transition: background 0.3s, border-color 0.3s, color 0.3s;
+    }
+    .bs-back a:hover {
+      background: rgba(184,150,62,0.14);
+      border-color: var(--g);
+      color: var(--cream);
+    }
+
+    .site-footer { border-top: 1px solid rgba(184,150,62,0.1); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" id="site-header">
+    <a href="index.html" class="logo">
+      HASIBUNE
+      <span>株式会社HASIBUNE</span>
+    </a>
+    <button class="nav-toggle" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="about.html">会社概要</a></li>
+        <li><a href="services.html">サービス</a></li>
+        <li><a href="products.html" class="active">オリジナルプロダクト</a></li>
+        <li><a href="design.html">デザイン</a></li>
+        <li><a href="https://shop.hasibune.jp/" target="_blank" rel="noopener">オンラインストア</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <!-- 導入 -->
+  <section class="bs-intro">
+    <span class="bs-label">— Bath Salt —</span>
+    <h1>バスソルト</h1>
+    <p class="bs-brand">Soupir d'amour</p>
+    <div class="bs-rule"></div>
+    <p class="bs-copy">
+      柚子の香りをそのままに、一日の終わりへ。<br>
+      湯気とともに立ちのぼる香りが、<br>
+      こわばった時間をゆっくりとほどいていきます。
+    </p>
+  </section>
+
+
+  <!-- POP 画像（画面幅で自動切替） -->
+  <section class="bs-visual">
+
+    <!-- PC（768px以上）：横長POP 1枚 -->
+    <div class="bs-pc">
+      <img src="images/Soupir_damour_pc.jpg" alt="Soupir d'amour バスソルト">
+    </div>
+
+    <!-- スマホ（768px未満）：縦3枚を 01→02→03 の順に -->
+    <div class="bs-sp">
+      <img src="images/Soupir_damour_mobile_01.jpg" alt="Soupir d'amour バスソルト 1">
+      <img src="images/Soupir_damour_mobile_02.jpg" alt="Soupir d'amour バスソルト 2">
+      <img src="images/Soupir_damour_mobile_03.jpg" alt="Soupir d'amour バスソルト 3">
+    </div>
+
+  </section>
+
+
+  <!-- 一覧へ戻る -->
+  <div class="bs-back">
+    <a href="products.html">オリジナルプロダクト一覧へ</a>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">HASIBUNE</div>
+        <p>
+          〒771-0131<br>
+          徳島市川内町大松900-19<br>
+          Mobile: 080-4038-2368<br>
+          Email: info@hasibune.jp<br>
+          <br>
+          〒141-0021<br>
+          東京都品川区上大崎2丁目13-28<br>
+          ソフィア白金301
+        </p>
+        <a href="https://www.instagram.com/hasibune_official/" target="_blank" rel="noopener" class="footer-sns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+            <circle cx="12" cy="12" r="4.2"></circle>
+            <circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"></circle>
+          </svg>
+          Instagram
+        </a>
+      </div>
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="about.html">会社概要</a></li>
+          <li><a href="services.html">サービス</a></li>
+          <li><a href="design.html">デザイン・ウェブデザイン</a></li>
+          <li><a href="contact.html">お問い合わせ</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 株式会社HASIBUNE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
