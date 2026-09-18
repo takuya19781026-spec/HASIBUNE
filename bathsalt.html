@@ -105,6 +105,30 @@
        768px以上 → PC用の横長POPのみ
        768px未満 → スマホ用3枚のみ（01→02→03）
     ============================================ */
+    /* ---- 動画 ---- */
+    .bs-movie {
+      padding: 1rem 6vw 0;
+      text-align: center;
+    }
+    .bs-movie-label {
+      display: block;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-style: italic;
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      color: rgba(184,150,62,0.7);
+      margin-bottom: 1.6rem;
+    }
+    .bs-movie video {
+      display: block;
+      width: 100%;
+      max-width: 560px;   /* 正方形動画のためPCでは抑えめに */
+      height: auto;       /* 縦横比を維持 */
+      margin: 0 auto;
+      border: 1px solid rgba(184,150,62,0.18);
+      background: #000;
+    }
+
     .bs-visual { padding: 3rem 0 0; }
 
     .bs-pc {
@@ -137,6 +161,13 @@
       }
       .bs-visual { padding: 2rem 0 0; }
       .bs-intro { padding: 9rem 6vw 4rem; }
+      .bs-movie { padding: 0; }
+      .bs-movie-label { margin-bottom: 1.2rem; }
+      .bs-movie video {
+        max-width: 100%;
+        border-left: 0;
+        border-right: 0;
+      }
     }
 
     /* ---- back link ---- */
@@ -200,6 +231,21 @@
       湯気とともに立ちのぼる香りが、<br>
       こわばった時間をゆっくりとほどいていきます。
     </p>
+  </section>
+
+
+  <!-- 動画 -->
+  <section class="bs-movie">
+    <span class="bs-movie-label">— Movie —</span>
+    <video
+      poster="images/soupir-bathsalt-poster.jpg"
+      autoplay muted loop playsinline controls
+      preload="metadata"
+      aria-label="Soupir d'amour バスソルト">
+      <source src="video/soupir-bathsalt.mp4" type="video/mp4">
+      <source src="video/soupir-bathsalt.webm" type="video/webm">
+      お使いのブラウザは動画の再生に対応していません。
+    </video>
   </section>
 
 
