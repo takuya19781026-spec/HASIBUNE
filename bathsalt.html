@@ -109,14 +109,14 @@
 
     .bs-pc {
       display: block;
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 0 6vw;
     }
     .bs-pc img {
       display: block;
       width: 100%;
-      height: auto;   /* 縦横比を維持 */
+      max-width: 1200px;   /* PCでは最大1200px */
+      height: auto;        /* 縦横比を維持 */
+      margin: 0 auto;      /* 中央配置 */
     }
 
     .bs-sp { display: none; }
